@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Secretaría de Extensión Universitaria · UNSL</title>
+    <meta name="description"
+        content="Portal de la Secretaría de Extensión Universitaria de la Universidad Nacional de San Luis. Formación, proyectos, agendas y reservas.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Public Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                        serif: ['"Newsreader"', 'Georgia', 'serif'],
+                    },
+                    colors: {
+                        seu: { DEFAULT: '#8a0c18', dark: '#6b0912' },
+                        ink: '#1a1a1a',
+                        paper: '#fafaf9',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+    html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+    body { @apply bg-white font-sans text-ink antialiased; }
+    :focus-visible { @apply outline-2 outline-offset-2 outline-seu; }
+    .dark-surface :focus-visible { @apply outline-white; }
+  }
+  @layer components {
+    .fld { @apply block w-full rounded-sm border border-neutral-300 bg-white px-3 py-2.5 text-sm focus:border-seu focus:ring-1 focus:ring-seu; }
+    .lbl { @apply mb-1.5 block text-sm font-medium text-neutral-900; }
+  }
+</style>
+</head>
+
+<body>
+
+    <!-- Sprite de Iconos -->
+    <svg width="0" height="0" class="absolute" aria-hidden="true" focusable="false">
+        <defs>
+            <symbol id="i-arrow" viewBox="0 0 24 24">
+                <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.75" />
+            </symbol>
+            <symbol id="i-fb" viewBox="0 0 24 24">
+                <path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v6h4v-6h3l1-4h-4V8z" fill="currentColor" />
+            </symbol>
+            <symbol id="i-ig" viewBox="0 0 24 24">
+                <rect x="3.5" y="3.5" width="17" height="17" rx="4.5" fill="none" stroke="currentColor"
+                    stroke-width="1.75" />
+                <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.75" />
+                <circle cx="17" cy="7" r="1.1" fill="currentColor" />
+            </symbol>
+            <symbol id="i-yt" viewBox="0 0 24 24">
+                <rect x="2.5" y="5.5" width="19" height="13" rx="3.5" fill="none" stroke="currentColor"
+                    stroke-width="1.75" />
+                <path d="M10 9.5v5l4.5-2.5z" fill="currentColor" />
+            </symbol>
+            <symbol id="i-doc" viewBox="0 0 24 24">
+                <path d="M6 3h8l4 4v14H6zM14 3v4h4M9 12h6M9 16h6" fill="none" stroke="currentColor"
+                    stroke-width="1.5" />
+            </symbol>
+            <symbol id="i-grid" viewBox="0 0 24 24">
+                <path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z" fill="none" stroke="currentColor"
+                    stroke-width="1.5" />
+            </symbol>
+            <symbol id="i-cap" viewBox="0 0 24 24">
+                <path d="M2 9l10-5 10 5-10 5zM6 11.5V16c3 2.5 9 2.5 12 0v-4.5" fill="none" stroke="currentColor"
+                    stroke-width="1.5" />
+            </symbol>
+            <symbol id="i-coin" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.5" />
+                <path
+                    d="M12 7v10M9.5 9.5c0-1 1-1.5 2.5-1.5s2.5.7 2.5 1.7c0 2.3-5 1.3-5 3.6 0 1 1 1.7 2.5 1.7s2.5-.5 2.5-1.5"
+                    fill="none" stroke="currentColor" stroke-width="1.5" />
+            </symbol>
+            <symbol id="i-cult" viewBox="0 0 24 24">
+                <path d="M3 10l9-6 9 6M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18" fill="none" stroke="currentColor"
+                    stroke-width="1.5" />
+            </symbol>
+            <symbol id="i-flag" viewBox="0 0 24 24">
+                <path d="M5 21V4M5 5h13l-2.5 4L18 13H5" fill="none" stroke="currentColor" stroke-width="1.5" />
+            </symbol>
+            <symbol id="i-award" viewBox="0 0 24 24">
+                <circle cx="12" cy="9" r="5.5" fill="none" stroke="currentColor" stroke-width="1.5" />
+                <path d="M8.5 13.5L7 21l5-3 5 3-1.5-7.5" fill="none" stroke="currentColor" stroke-width="1.5" />
+            </symbol>
+            <symbol id="i-people" viewBox="0 0 24 24">
+                <circle cx="9" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="1.5" />
+                <path d="M2.5 20c0-3.5 3-6 6.5-6s6.5 2.5 6.5 6M16 4.8a3.5 3.5 0 0 1 0 6.4M18 14.3c2 .7 3.5 2.7 3.5 5.7"
+                    fill="none" stroke="currentColor" stroke-width="1.5" />
+            </symbol>
+            <symbol id="i-mail" viewBox="0 0 24 24">
+                <rect x="3" y="5" width="18" height="14" rx="1.5" fill="none" stroke="currentColor"
+                    stroke-width="1.5" />
+                <path d="M3.5 6.5l8.5 7 8.5-7" fill="none" stroke="currentColor" stroke-width="1.5" />
+            </symbol>
+            <symbol id="i-chev" viewBox="0 0 24 24">
+                <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.75" />
+            </symbol>
+            <symbol id="i-menu" viewBox="0 0 24 24">
+                <path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.75" />
+            </symbol>
+            <symbol id="i-x" viewBox="0 0 24 24">
+                <path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.75" />
+            </symbol>
+        </defs>
+    </svg>
+
+    <a href="#contenido"
+        class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-sm focus:bg-seu focus:px-4 focus:py-2 focus:text-white">Saltar
+        al contenido</a>
+
+    <!-- HEADER -->
+    <header class="sticky top-0 z-40 border-b border-neutral-200 bg-white/95 backdrop-blur">
+        <div class="mx-auto flex h-16 max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
+            <a href="#" class="flex items-center gap-3" aria-label="SEU UNSL, ir al inicio">
+                <span
+                    class="grid h-9 w-9 place-items-center rounded-sm bg-seu font-serif text-sm font-semibold text-white"
+                    aria-hidden="true">SEU</span>
+                <span class="hidden leading-tight sm:block"><span class="block text-sm font-semibold">Extensión
+                        Universitaria</span><span class="block text-xs text-neutral-600">Universidad Nacional de San
+                        Luis</span></span>
+            </a>
+
+            <nav aria-label="Principal" class="hidden lg:block">
+                <ul class="flex items-center gap-1 text-sm font-medium">
+                    <li><a class="rounded-sm px-3 py-2 hover:text-seu" href="#institucional">Institucional</a></li>
+                    <li class="relative">
+                        <button type="button" id="formBtn"
+                            class="flex items-center gap-1 rounded-sm px-3 py-2 hover:text-seu"
+                            aria-expanded="false">Formación <svg class="h-4 w-4" aria-hidden="true">
+                                <use href="#i-chev" />
+                            </svg></button>
+                        <ul id="formMenu" hidden
+                            class="absolute left-0 top-full w-48 rounded-sm border border-neutral-200 bg-white py-1 shadow-lg">
+                            <li><a class="block px-4 py-2 hover:bg-neutral-50 hover:text-seu"
+                                    href="#diplomaturas">Diplomaturas</a></li>
+                            <li><a class="block px-4 py-2 hover:bg-neutral-50 hover:text-seu"
+                                    href="#capacitaciones">Capacitaciones</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="rounded-sm px-3 py-2 hover:text-seu" href="#proyectos">Proyectos</a></li>
+                    <li><a class="rounded-sm px-3 py-2 hover:text-seu" href="#reservas">Reservas</a></li>
+                    <li><a class="rounded-sm px-3 py-2 hover:text-seu" href="#agendas">Agendas</a></li>
+                    <li><a class="rounded-sm px-3 py-2 hover:text-seu" href="#noticias">Noticias</a></li>
+                </ul>
+            </nav>
+
+            <div class="flex items-center gap-1">
+                <ul class="hidden items-center sm:flex" aria-label="Redes sociales">
+                    <li><a href="#" class="grid h-10 w-10 place-items-center rounded-sm text-neutral-700 hover:text-seu"
+                            aria-label="Facebook"><svg class="h-5 w-5" aria-hidden="true">
+                                <use href="#i-fb" />
+                            </svg></a></li>
+                    <li><a href="#" class="grid h-10 w-10 place-items-center rounded-sm text-neutral-700 hover:text-seu"
+                            aria-label="Instagram"><svg class="h-5 w-5" aria-hidden="true">
+                                <use href="#i-ig" />
+                            </svg></a></li>
+                    <li><a href="#" class="grid h-10 w-10 place-items-center rounded-sm text-neutral-700 hover:text-seu"
+                            aria-label="YouTube"><svg class="h-5 w-5" aria-hidden="true">
+                                <use href="#i-yt" />
+                            </svg></a></li>
+                </ul>
+                <button type="button" id="menuBtn" class="grid h-10 w-10 place-items-center rounded-sm lg:hidden"
+                    aria-label="Menú"><svg class="h-6 w-6" aria-hidden="true">
+                        <use href="#i-menu" />
+                    </svg></button>
+            </div>
+        </div>
+    </header>
+
+    <main id="contenido">
+
+        <!-- HERO -->
+        <section aria-roledescription="carrusel" aria-label="Destacados"
+            class="relative bg-neutral-950 text-white dark-surface">
+            <div class="relative mx-auto min-h-[32rem] max-w-7xl overflow-hidden lg:min-h-[36rem]">
+                <div class="slide absolute inset-0 grid items-end bg-gradient-to-br from-neutral-800 to-neutral-950"
+                    aria-label="1 de 3">
+                    <div class="px-4 pb-20 pt-16 sm:px-6 lg:px-8 lg:pb-24">
+                        <div class="max-w-2xl">
+                            <span
+                                class="inline-block rounded-sm border border-seu px-2 py-0.5 text-xs font-semibold uppercase tracking-wider text-seu bg-white">Inscripciones
+                                Abiertas</span>
+                            <h1 class="mt-4 font-serif text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
+                                Capacitaciones 2026</h1>
+                            <p class="mt-5 max-w-xl text-lg text-neutral-200">Cursos cortos orientados a toda la
+                                comunidad en diversas áreas del conocimiento y la cultura.</p>
+                            <a href="#capacitaciones"
+                                class="mt-8 inline-flex items-center gap-2 rounded-sm bg-seu px-6 py-3 font-medium text-white hover:bg-seu-dark">Inscribirse
+                                <svg class="h-5 w-5" aria-hidden="true">
+                                    <use href="#i-arrow" />
+                                </svg></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide absolute inset-0 grid items-end bg-gradient-to-br from-stone-800 to-neutral-950"
+                    aria-label="2 de 3" hidden>
+                    <div class="px-4 pb-20 pt-16 sm:px-6 lg:px-8 lg:pb-24">
+                        <div class="max-w-2xl">
+                            <span
+                                class="inline-block rounded-sm border border-white px-2 py-0.5 text-xs font-semibold uppercase tracking-wider text-white">Convocatoria
+                                2027</span>
+                            <h2 class="mt-4 font-serif text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
+                                Proyectos de Extensión</h2>
+                            <p class="mt-5 max-w-xl text-lg text-neutral-200">Presentá tu proyecto PEIS o PEII.
+                                Articulemos el conocimiento universitario con las necesidades sociales.</p>
+                            <a href="#proyectos"
+                                class="mt-8 inline-flex items-center gap-2 rounded-sm bg-seu px-6 py-3 font-medium text-white hover:bg-seu-dark">Ver
+                                bases <svg class="h-5 w-5" aria-hidden="true">
+                                    <use href="#i-arrow" />
+                                </svg></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute bottom-6 left-4 flex items-center gap-2 sm:left-6 lg:left-8">
+                    <button type="button" id="prev"
+                        class="grid h-10 w-10 place-items-center rounded-sm border border-white/40 hover:bg-white hover:text-ink"><svg
+                            class="h-5 w-5 rotate-180" aria-hidden="true">
+                            <use href="#i-arrow" />
+                        </svg></button>
+                    <button type="button" id="next"
+                        class="grid h-10 w-10 place-items-center rounded-sm border border-white/40 hover:bg-white hover:text-ink"><svg
+                            class="h-5 w-5" aria-hidden="true">
+                            <use href="#i-arrow" />
+                        </svg></button>
+                    <span class="ml-3 text-sm tabular-nums text-neutral-300" id="count">1 / 2</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- INSTITUCIONAL -->
+        <section id="institucional" class="bg-paper py-20">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="grid gap-6 md:grid-cols-2">
+                    <article
+                        class="group flex flex-col justify-between rounded-sm border border-neutral-200 bg-white p-8 hover:border-seu sm:p-10">
+                        <div>
+                            <h3 class="font-serif text-3xl font-semibold">Institucional</h3>
+                            <p class="mt-4 max-w-md text-neutral-600">Conocé la misión, las secretarías y el equipo que
+                                conforma la red de extensión universitaria en la UNSL.</p>
+                        </div>
+                        <a href="#"
+                            class="mt-8 inline-flex items-center gap-2 font-medium text-seu underline-offset-4 group-hover:underline">Nuestro
+                            equipo <svg class="h-5 w-5" aria-hidden="true">
+                                <use href="#i-arrow" />
+                            </svg></a>
+                    </article>
+                    <article
+                        class="group flex flex-col justify-between rounded-sm border border-neutral-200 bg-white p-8 hover:border-seu sm:p-10">
+                        <div>
+                            <h3 class="font-serif text-3xl font-semibold">CAEX</h3>
+                            <p class="mt-4 max-w-md text-neutral-600">Comisión Asesora de Extensión Universitaria,
+                                responsable de evaluar y orientar las políticas de vinculación.</p>
+                        </div>
+                        <a href="#"
+                            class="mt-8 inline-flex items-center gap-2 font-medium text-seu underline-offset-4 group-hover:underline">Conocer
+                            más <svg class="h-5 w-5" aria-hidden="true">
+                                <use href="#i-arrow" />
+                            </svg></a>
+                    </article>
+                </div>
+                <!-- Guarda de facultades -->
+                <div class="mt-10 flex h-1.5 overflow-hidden rounded-sm" aria-hidden="true">
+                    <span class="flex-1 bg-[#1F2449]"></span><span class="flex-1 bg-[#008D3B]"></span><span
+                        class="flex-1 bg-[#A5C614]"></span><span class="flex-1 bg-[#F4B318]"></span>
+                    <span class="flex-1 bg-[#ED6F03]"></span><span class="flex-1 bg-[#E42420]"></span><span
+                        class="flex-1 bg-[#972F70]"></span><span class="flex-1 bg-[#502773]"></span>
+                    <span class="flex-1 bg-[#4B707F]"></span><span class="flex-1 bg-[#996A16]"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOTICIAS -->
+        <section id="noticias" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+            <div class="mb-10 flex items-end justify-between border-b border-neutral-200 pb-4">
+                <h2 class="font-serif text-3xl font-semibold sm:text-4xl">Noticias SEU</h2>
+                <a href="#" class="text-sm font-medium text-seu underline-offset-4 hover:underline">Ver todas</a>
+            </div>
+            <div class="grid gap-10 lg:grid-cols-5">
+                <article
+                    class="group relative isolate flex min-h-[24rem] items-end overflow-hidden rounded-sm bg-neutral-800 lg:col-span-3">
+                    <div class="absolute inset-0 -z-10 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
+                    </div>
+                    <div class="p-6 text-white sm:p-8">
+                        <span
+                            class="inline-block rounded-sm bg-seu px-2 py-1 text-xs font-semibold">Institucional</span>
+                        <h3 class="mt-3 max-w-lg font-serif text-3xl font-semibold leading-tight"><a href="#"
+                                class="after:absolute after:inset-0 group-hover:underline underline-offset-4">La UNSL
+                                convoca a presentar Proyectos de Extensión de Interés Social para 2027</a></h3>
+                    </div>
+                </article>
+                <div class="lg:col-span-2">
+                    <ul class="divide-y divide-neutral-200">
+                        <li>
+                            <article class="group flex gap-4 py-5 first:pt-0">
+                                <div class="h-24 w-24 shrink-0 rounded-sm bg-neutral-200" aria-label="Miniatura"></div>
+                                <div>
+                                    <p class="text-sm font-medium text-seu">Agenda Cultural</p>
+                                    <h3 class="mt-1 font-semibold leading-snug"><a href="#"
+                                            class="group-hover:text-seu">Flavia Calderón trae sus canciones al ciclo La
+                                            Canción con Sentido</a></h3>
+                                </div>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="group flex gap-4 py-5">
+                                <div class="h-24 w-24 shrink-0 rounded-sm bg-neutral-200" aria-label="Miniatura"></div>
+                                <div>
+                                    <p class="text-sm font-medium text-seu">Interés General</p>
+                                    <h3 class="mt-1 font-semibold leading-snug"><a href="#"
+                                            class="group-hover:text-seu">“Más allá de la realidad”: muestra colectiva
+                                            del Taller de Arte Lotus</a></h3>
+                                </div>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="group flex gap-4 py-5">
+                                <div class="h-24 w-24 shrink-0 rounded-sm bg-neutral-200" aria-label="Miniatura"></div>
+                                <div>
+                                    <p class="text-sm font-medium text-seu">Institucional</p>
+                                    <h3 class="mt-1 font-semibold leading-snug"><a href="#"
+                                            class="group-hover:text-seu">Candidaturas al Premio Rector Mauricio Amílcar
+                                            López</a></h3>
+                                </div>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CAPACITACIONES & DIPLOMATURAS -->
+        <section class="border-y border-neutral-200 bg-paper py-20">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+                <!-- Capacitaciones -->
+                <div id="capacitaciones">
+                    <div class="flex items-end justify-between border-b border-neutral-200 pb-4">
+                        <h2 class="font-serif text-3xl font-semibold sm:text-4xl">Capacitaciones</h2>
+                    </div>
+                    <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                        <!-- Tarjeta generada por JS como ejemplo -->
+                        <article
+                            class="flex flex-col rounded-sm border border-neutral-200 bg-white transition hover:border-seu">
+                            <div class="aspect-[16/10] bg-neutral-200"></div>
+                            <div class="flex flex-1 flex-col p-6">
+                                <h3 class="text-xl font-semibold leading-snug">Introducción a la Gestión Cultural</h3>
+                                <p class="mt-2 text-sm text-neutral-600">Sede: San Luis</p>
+                                <button
+                                    class="mt-6 inline-flex w-fit items-center justify-center rounded-sm bg-seu px-4 py-2 text-sm font-semibold text-white hover:bg-seu-dark"
+                                    data-open="modalCapacitacion">Inscribirse</button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Diplomaturas -->
+                <div id="diplomaturas" class="mt-20">
+                    <div class="flex items-end justify-between border-b border-neutral-200 pb-4">
+                        <h2 class="font-serif text-3xl font-semibold sm:text-4xl">Diplomaturas</h2>
+                    </div>
+                    <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                        <article
+                            class="flex flex-col rounded-sm border border-neutral-200 bg-white transition hover:border-seu">
+                            <div class="aspect-[16/10] bg-neutral-200"></div>
+                            <div class="flex flex-1 flex-col p-6">
+                                <span class="text-xs font-semibold uppercase tracking-wider text-seu">Salud</span>
+                                <h3 class="mt-2 text-xl font-semibold leading-snug">Diplomatura en Cuidados Comunitarios
+                                </h3>
+                                <p class="mt-3 flex-1 text-sm text-neutral-600">Formación para el acompañamiento
+                                    territorial.</p>
+                                <a href="#" class="mt-6 font-medium text-seu underline-offset-4 hover:underline">Ver
+                                    diplomatura</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PROYECTOS -->
+        <section id="proyectos" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+            <div class="grid gap-10 lg:grid-cols-5">
+                <div class="rounded-sm bg-seu p-8 text-white sm:p-10 lg:col-span-3">
+                    <h2 class="font-serif text-3xl font-semibold sm:text-4xl">Convocatorias 2027</h2>
+                    <p class="mt-4 max-w-lg text-red-50">Abierta la inscripción para Proyectos de Extensión de Interés
+                        Social (PEIS) y Proyectos de Extensión de Interés Institucional (PEII).</p>
+                    <div class="mt-8 flex gap-4">
+                        <a href="#"
+                            class="inline-flex rounded-sm bg-white px-5 py-3 font-semibold text-seu hover:bg-neutral-100">Inscribirse</a>
+                        <a href="#"
+                            class="inline-flex rounded-sm border border-white px-5 py-3 font-semibold hover:bg-white/10">Bases
+                            y Condiciones</a>
+                    </div>
+                </div>
+                <nav class="lg:col-span-2" aria-label="Archivo de Proyectos">
+                    <h3 class="font-serif text-2xl font-semibold">Archivo de Proyectos</h3>
+                    <ul class="mt-4 divide-y divide-neutral-200 border-y border-neutral-200">
+                        <li><a href="#"
+                                class="flex items-center justify-between py-4 font-medium hover:text-seu">Interés
+                                Institucional (PEII) <svg class="h-4 w-4" aria-hidden="true">
+                                    <use href="#i-arrow" />
+                                </svg></a></li>
+                        <li><a href="#"
+                                class="flex items-center justify-between py-4 font-medium hover:text-seu">Interés Social
+                                (PEIS) <svg class="h-4 w-4" aria-hidden="true">
+                                    <use href="#i-arrow" />
+                                </svg></a></li>
+                        <li><a href="#"
+                                class="flex items-center justify-between py-4 font-medium hover:text-seu">Extensión y
+                                Docencia (PED) <svg class="h-4 w-4" aria-hidden="true">
+                                    <use href="#i-arrow" />
+                                </svg></a></li>
+                        <li><a href="#"
+                                class="flex items-center justify-between py-4 font-medium hover:text-seu">Proyectos
+                                Anteriores <svg class="h-4 w-4" aria-hidden="true">
+                                    <use href="#i-arrow" />
+                                </svg></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+
+        <!-- AGENDAS -->
+        <section id="agendas" class="bg-paper py-20">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-wrap items-end justify-between gap-4 border-b border-neutral-200 pb-4">
+                    <h2 class="font-serif text-3xl font-semibold sm:text-4xl">Agendas</h2>
+                    <button
+                        class="flex items-center gap-2 rounded-sm border border-seu px-4 py-2 text-sm font-semibold text-seu hover:bg-seu hover:text-white transition">Activar
+                        notificaciones</button>
+                </div>
+
+                <div class="mt-8">
+                    <div class="flex gap-6 border-b border-neutral-200" role="tablist">
+                        <button id="tab-cultural"
+                            class="tab-btn active -mb-px border-b-2 border-seu pb-3 font-semibold text-ink"
+                            aria-selected="true">Agenda Cultural</button>
+                        <button id="tab-institucional"
+                            class="tab-btn -mb-px border-b-2 border-transparent pb-3 font-semibold text-neutral-500 hover:text-ink"
+                            aria-selected="false">Agenda Institucional</button>
+                    </div>
+
+                    <!-- Panel Cultural -->
+                    <div id="panel-cultural" class="mt-6 divide-y divide-neutral-200">
+                        <article class="flex gap-6 py-5">
+                            <time class="flex w-16 shrink-0 flex-col items-center text-center"><span
+                                    class="text-3xl font-semibold text-seu">15</span><span
+                                    class="text-sm font-medium uppercase text-neutral-600">Nov</span></time>
+                            <div>
+                                <h3 class="text-lg font-semibold">Exposición de Arte Local</h3>
+                                <p class="text-sm text-neutral-600">Centro Cultural UNSL · 18:00 hs</p>
+                            </div>
+                        </article>
+                        <article class="flex gap-6 py-5">
+                            <time class="flex w-16 shrink-0 flex-col items-center text-center"><span
+                                    class="text-3xl font-semibold text-seu">22</span><span
+                                    class="text-sm font-medium uppercase text-neutral-600">Nov</span></time>
+                            <div>
+                                <h3 class="text-lg font-semibold">Obra de Teatro Comunitario</h3>
+                                <p class="text-sm text-neutral-600">Auditorio Mauricio López · 21:00 hs</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Panel Institucional -->
+                    <div id="panel-institucional" class="mt-6 divide-y divide-neutral-200 hidden">
+                        <article class="flex gap-6 py-5">
+                            <time class="flex w-16 shrink-0 flex-col items-center text-center"><span
+                                    class="text-3xl font-semibold text-seu">10</span><span
+                                    class="text-sm font-medium uppercase text-neutral-600">Nov</span></time>
+                            <div>
+                                <h3 class="text-lg font-semibold">Reunión CAEX</h3>
+                                <p class="text-sm text-neutral-600">Rectorado · 10:00 hs</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESERVAS (Form + Calendar) -->
+        <section id="reservas" class="py-20">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <h2 class="mb-2 font-serif text-3xl font-semibold sm:text-4xl">Reserva de Espacios</h2>
+                <p class="mb-10 text-neutral-600">Solicitá el espacio para tus actividades institucionales o culturales.
+                </p>
+
+                <form class="grid gap-12 lg:grid-cols-12">
+                    <!-- Espacios (Radio Cards) -->
+                    <fieldset class="lg:col-span-12">
+                        <legend class="mb-4 text-xl font-semibold">1. Seleccioná un Espacio</legend>
+                        <div class="grid gap-6 md:grid-cols-3">
+                            <label class="cursor-pointer">
+                                <input type="radio" name="espacio" class="peer sr-only" checked>
+                                <div
+                                    class="h-full rounded-sm border border-neutral-300 p-6 transition peer-checked:border-seu peer-checked:ring-1 peer-checked:ring-seu">
+                                    <h4 class="text-lg font-semibold">Auditorio Mauricio López</h4>
+                                    <p class="mt-1 text-sm font-medium text-seu">Capacidad: 440 personas</p>
+                                    <ul class="mt-4 space-y-1 text-sm text-neutral-600">
+                                        <li>Escenario: 12m x 6m x 5m</li>
+                                        <li>Sistema de aro magnético</li>
+                                        <li>Audio e iluminación</li>
+                                        <li>Pantalla gigante y proyector</li>
+                                    </ul>
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="espacio" class="peer sr-only">
+                                <div
+                                    class="h-full rounded-sm border border-neutral-300 p-6 transition peer-checked:border-seu peer-checked:ring-1 peer-checked:ring-seu">
+                                    <h4 class="text-lg font-semibold">Microcine</h4>
+                                    <p class="mt-1 text-sm font-medium text-seu">Capacidad: 100 personas</p>
+                                    <ul class="mt-4 space-y-1 text-sm text-neutral-600">
+                                        <li>Equipos de proyección</li>
+                                        <li>Ambiente climatizado</li>
+                                        <li>Equipo técnico</li>
+                                    </ul>
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="espacio" class="peer sr-only">
+                                <div
+                                    class="h-full rounded-sm border border-neutral-300 p-6 transition peer-checked:border-seu peer-checked:ring-1 peer-checked:ring-seu">
+                                    <h4 class="text-lg font-semibold">Sala de Exposiciones</h4>
+                                    <p class="mt-1 text-sm font-medium text-seu">Dimensiones: 14 x 21m</p>
+                                    <ul class="mt-4 space-y-1 text-sm text-neutral-600">
+                                        <li>5 módulos fijos de 6m</li>
+                                        <li>Grilla de luces a los 3m</li>
+                                        <li>Paneles movibles</li>
+                                    </ul>
+                                </div>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <!-- Calendario Widget (Simulado) -->
+                    <div class="lg:col-span-5">
+                        <h3 class="mb-4 text-xl font-semibold">2. Elegí la Fecha</h3>
+                        <div class="rounded-sm border border-neutral-200 bg-paper p-6">
+                            <div class="flex items-center justify-between pb-4">
+                                <button type="button" class="font-bold text-neutral-500 hover:text-seu">&lt;</button>
+                                <span class="font-semibold capitalize">Noviembre 2026</span>
+                                <button type="button" class="font-bold text-neutral-500 hover:text-seu">&gt;</button>
+                            </div>
+                            <div class="grid grid-cols-7 gap-2 text-center text-xs font-medium text-neutral-500">
+                                <span>Lu</span><span>Ma</span><span>Mi</span><span>Ju</span><span>Vi</span><span>Sá</span><span>Do</span>
+                            </div>
+                            <div class="mt-2 grid grid-cols-7 gap-2 text-sm">
+                                <!-- Días vacíos -->
+                                <span></span><span></span><span></span><span></span><span></span><span></span>
+                                <!-- Días (Ejemplo) -->
+                                <button type="button"
+                                    class="aspect-square rounded-sm bg-neutral-200 text-neutral-400 line-through"
+                                    disabled>1</button>
+                                <button type="button"
+                                    class="aspect-square rounded-sm border border-neutral-300 hover:border-seu">2</button>
+                                <button type="button"
+                                    class="aspect-square rounded-sm border border-neutral-300 hover:border-seu">3</button>
+                                <button type="button"
+                                    class="aspect-square rounded-sm bg-seu text-white font-semibold">4</button>
+                                <button type="button"
+                                    class="aspect-square rounded-sm border border-neutral-300 hover:border-seu">5</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formulario Reserva -->
+                    <div class="lg:col-span-7">
+                        <h3 class="mb-4 text-xl font-semibold">3. Datos de Contacto</h3>
+                        <div class="grid gap-4 sm:grid-cols-2">
+                            <div><label class="lbl">Nombre y Apellido</label><input type="text" class="fld" required>
+                            </div>
+                            <div><label class="lbl">Correo Electrónico</label><input type="email" class="fld" required>
+                            </div>
+                            <div><label class="lbl">Teléfono</label><input type="tel" class="fld" required></div>
+                            <div><label class="lbl">Institución / Organización</label><input type="text" class="fld">
+                            </div>
+                            <div class="sm:col-span-2"><label class="lbl">Detalle del Evento y
+                                    Requerimientos</label><textarea class="fld" rows="4"></textarea></div>
+                            <div class="sm:col-span-2">
+                                <button type="submit"
+                                    class="w-full rounded-sm bg-seu py-3 font-semibold text-white hover:bg-seu-dark">Solicitar
+                                    Reserva</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- ACCESOS FRECUENTES (BENTO GRID) -->
+        <section id="accesos" class="bg-paper py-20">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <h2 class="mb-10 font-serif text-3xl font-semibold sm:text-4xl">Accesos Frecuentes</h2>
+                <div class="grid auto-rows-[10rem] gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                    <a href="#"
+                        class="group col-span-1 flex flex-col justify-between rounded-sm border border-neutral-200 bg-white p-6 transition hover:-translate-y-0.5 hover:border-seu"><svg
+                            class="h-8 w-8 text-neutral-400 group-hover:text-seu transition" aria-hidden="true">
+                            <use href="#i-grid" />
+                        </svg>
+                        <h3 class="font-semibold">Programas SPU</h3>
+                    </a>
+                    <a href="#"
+                        class="group col-span-1 flex flex-col justify-between rounded-sm border border-neutral-200 bg-white p-6 transition hover:-translate-y-0.5 hover:border-seu"><svg
+                            class="h-8 w-8 text-neutral-400 group-hover:text-seu transition" aria-hidden="true">
+                            <use href="#i-coin" />
+                        </svg>
+                        <h3 class="font-semibold">Becas SEU</h3>
+                    </a>
+                    <a href="#"
+                        class="group sm:col-span-2 flex flex-col justify-between rounded-sm bg-ink p-6 text-white transition hover:-translate-y-0.5 hover:bg-black"><svg
+                            class="h-8 w-8 text-neutral-400 group-hover:text-white transition" aria-hidden="true">
+                            <use href="#i-cult" />
+                        </svg>
+                        <div>
+                            <h3 class="text-xl font-semibold">Centro Cultural</h3>
+                            <p class="mt-1 text-sm text-neutral-400">Microcine, Auditorio y Exposiciones</p>
+                        </div>
+                    </a>
+
+                    <a href="#"
+                        class="group col-span-1 flex flex-col justify-between rounded-sm border border-neutral-200 bg-white p-6 transition hover:-translate-y-0.5 hover:border-seu"><svg
+                            class="h-8 w-8 text-neutral-400 group-hover:text-seu transition" aria-hidden="true">
+                            <use href="#i-award" />
+                        </svg>
+                        <h3 class="font-semibold">Premios</h3>
+                    </a>
+                    <a href="#"
+                        class="group col-span-1 flex flex-col justify-between rounded-sm border border-neutral-200 bg-white p-6 transition hover:-translate-y-0.5 hover:border-seu"><svg
+                            class="h-8 w-8 text-neutral-400 group-hover:text-seu transition" aria-hidden="true">
+                            <use href="#i-people" />
+                        </svg>
+                        <h3 class="font-semibold">Culturas Comunitarias</h3>
+                    </a>
+                    <a href="#"
+                        class="group sm:col-span-2 flex items-center justify-between rounded-sm border border-neutral-200 bg-white p-6 transition hover:-translate-y-0.5 hover:border-seu">
+                        <div class="flex items-center gap-4"><svg class="h-8 w-8 text-seu" aria-hidden="true">
+                                <use href="#i-mail" />
+                            </svg>
+                            <div>
+                                <h3 class="font-semibold">Contactanos</h3>
+                                <p class="text-sm text-neutral-600">Trámites y Consultas</p>
+                            </div>
+                        </div>
+                        <svg class="h-6 w-6 text-seu transition group-hover:translate-x-1" aria-hidden="true">
+                            <use href="#i-arrow" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SITIOS DE INTERÉS -->
+        <section class="border-y border-neutral-200 py-16">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="mb-10 font-serif text-2xl font-semibold text-neutral-700">Sitios Relacionados</h2>
+                <div class="grid grid-cols-2 gap-8 sm:grid-cols-4 lg:grid-cols-8">
+                    <div
+                        class="grid place-items-center opacity-50 grayscale transition hover:opacity-100 hover:grayscale-0">
+                        <span class="text-sm font-semibold">Min. Cultura</span></div>
+                    <div
+                        class="grid place-items-center opacity-50 grayscale transition hover:opacity-100 hover:grayscale-0">
+                        <span class="text-sm font-semibold">SPU</span></div>
+                    <div
+                        class="grid place-items-center opacity-50 grayscale transition hover:opacity-100 hover:grayscale-0">
+                        <span class="text-sm font-semibold">REXUNI</span></div>
+                    <div
+                        class="grid place-items-center opacity-50 grayscale transition hover:opacity-100 hover:grayscale-0">
+                        <span class="text-sm font-semibold">Museo Bellas Artes</span></div>
+                    <div
+                        class="grid place-items-center opacity-50 grayscale transition hover:opacity-100 hover:grayscale-0">
+                        <span class="text-sm font-semibold">INAMU</span></div>
+                    <div
+                        class="grid place-items-center opacity-50 grayscale transition hover:opacity-100 hover:grayscale-0">
+                        <span class="text-sm font-semibold">INT</span></div>
+                    <div
+                        class="grid place-items-center opacity-50 grayscale transition hover:opacity-100 hover:grayscale-0">
+                        <span class="text-sm font-semibold">AUGM</span></div>
+                    <div
+                        class="grid place-items-center opacity-50 grayscale transition hover:opacity-100 hover:grayscale-0">
+                        <span class="text-sm font-semibold">FNA</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- POLÍTICAS DE INCLUSIÓN -->
+        <section class="bg-ink py-16 text-white dark-surface">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="font-serif text-2xl font-semibold">Políticas de inclusión, género y cuidado integral</h2>
+                <div class="mt-10 grid gap-6 sm:grid-cols-3">
+                    <a href="#" class="rounded-sm border border-neutral-700 p-6 hover:border-white transition">
+                        <h3 class="font-semibold text-lg">Equipo Técnico Interdisciplinario</h3>
+                    </a>
+                    <a href="#" class="rounded-sm border border-neutral-700 p-6 hover:border-white transition">
+                        <h3 class="font-semibold text-lg">Prevención en Adicciones</h3>
+                    </a>
+                    <a href="#" class="rounded-sm border border-neutral-700 p-6 hover:border-white transition">
+                        <h3 class="font-semibold text-lg">Universidad y Discapacidad</h3>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-neutral-200 bg-paper">
+        <div class="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:grid-cols-2 lg:grid-cols-4 sm:px-6 lg:px-8">
+            <div>
+                <span
+                    class="mb-4 grid h-10 w-10 place-items-center rounded-sm bg-ink font-serif text-xs font-semibold text-white">UNSL</span>
+                <h2 class="font-semibold">Información Institucional</h2>
+                <address class="mt-4 text-sm not-italic text-neutral-600 space-y-2">
+                    <p>Ejército de los Andes 950, San Luis</p>
+                    <p>Tel: +54 (0266) 4520300</p>
+                    <a href="#" class="text-seu font-medium hover:underline">Ver en Google Maps</a>
+                </address>
+            </div>
+            <div>
+                <span
+                    class="mb-4 grid h-10 w-10 place-items-center rounded-sm bg-seu font-serif text-xs font-semibold text-white">SEU</span>
+                <h2 class="font-semibold">Contactos Frecuentes</h2>
+                <ul class="mt-4 text-sm text-neutral-600 space-y-2">
+                    <li>Interno: 5123 - 5321</li>
+                    <li>2° Piso Edificio Rectorado - Ala A</li>
+                    <li><a href="mailto:seu.unsl@gmail.com" class="text-seu hover:underline">seu.unsl@gmail.com</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="font-semibold">Redes Sociales</h2>
+                <ul class="mt-4 space-y-3 text-sm text-neutral-600">
+                    <li><a href="#" class="flex items-center gap-2 hover:text-seu"><svg class="h-5 w-5"
+                                aria-hidden="true">
+                                <use href="#i-fb" />
+                            </svg>Facebook</a></li>
+                    <li><a href="#" class="flex items-center gap-2 hover:text-seu"><svg class="h-5 w-5"
+                                aria-hidden="true">
+                                <use href="#i-ig" />
+                            </svg>Instagram</a></li>
+                    <li><a href="#" class="flex items-center gap-2 hover:text-seu"><svg class="h-5 w-5"
+                                aria-hidden="true">
+                                <use href="#i-yt" />
+                            </svg>YouTube</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="font-semibold">Mapa de Sitio</h2>
+                <ul class="mt-4 space-y-2 text-sm text-neutral-600">
+                    <li><a href="#" class="hover:text-seu">Institucional</a></li>
+                    <li><a href="#" class="hover:text-seu">Proyectos</a></li>
+                    <li><a href="#" class="hover:text-seu">Gestión Cultural</a></li>
+                </ul>
+                <div class="mt-6 flex gap-3 border-t border-neutral-200 pt-6 text-sm font-medium">
+                    <button type="button" data-open="modalLogin"
+                        class="rounded-sm border border-ink px-4 py-2 hover:bg-ink hover:text-white transition">Ingreso</button>
+                    <button type="button" data-open="modalRegistro"
+                        class="rounded-sm bg-seu px-4 py-2 text-white hover:bg-seu-dark transition">Registrarse</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODALS -->
+
+    <!-- Modal: Capacitación (Inscripción y Detalles) -->
+    <dialog id="modalCapacitacion" class="m-auto w-[min(58rem,95vw)] rounded-sm p-0 shadow-2xl backdrop:bg-black/60">
+        <div class="flex max-h-[90vh] flex-col overflow-hidden bg-white">
+            <div class="flex items-center justify-between border-b border-neutral-200 px-6 py-4">
+                <h2 class="font-serif text-2xl font-semibold">Inscripción a Capacitación</h2>
+                <button type="button" data-close
+                    class="grid h-8 w-8 place-items-center rounded-sm hover:bg-neutral-100"><svg class="h-5 w-5"
+                        aria-hidden="true">
+                        <use href="#i-x" />
+                    </svg></button>
+            </div>
+            <div class="grid overflow-y-auto lg:grid-cols-2 p-6 gap-8">
+                <div>
+                    <div class="aspect-[16/9] w-full rounded-sm bg-neutral-200"></div>
+                    <h3 class="mt-4 text-xl font-semibold">Introducción a la Gestión Cultural</h3>
+                    <p class="mt-2 text-sm text-neutral-600">Objetivo: Brindar herramientas prácticas...</p>
+                    <dl class="mt-4 divide-y divide-neutral-200 text-sm">
+                        <div class="flex justify-between py-2">
+                            <dt class="font-medium text-ink">Responsable</dt>
+                            <dd class="text-neutral-600">Lic. Pérez</dd>
+                        </div>
+                        <div class="flex justify-between py-2">
+                            <dt class="font-medium text-ink">Sede</dt>
+                            <dd class="text-neutral-600">San Luis</dd>
+                        </div>
+                        <div class="flex justify-between py-2">
+                            <dt class="font-medium text-ink">Arancel</dt>
+                            <dd class="text-neutral-600">Gratuito</dd>
+                        </div>
+                        <div class="flex justify-between py-2">
+                            <dt class="font-medium text-ink">Duración</dt>
+                            <dd class="text-neutral-600">4 Semanas</dd>
+                        </div>
+                    </dl>
+                </div>
+                <form class="space-y-4">
+                    <h3 class="font-semibold">Completá tus datos</h3>
+                    <input type="text" placeholder="Apellido/s y Nombre/s" class="fld" required>
+                    <div class="grid grid-cols-2 gap-4">
+                        <input type="text" placeholder="DNI" class="fld" required>
+                        <input type="number" placeholder="Edad" class="fld" required>
+                    </div>
+                    <input type="email" placeholder="Correo Electrónico" class="fld" required>
+                    <input type="tel" placeholder="Número de Teléfono" class="fld" required>
+
+                    <fieldset>
+                        <legend class="lbl">Ocupación</legend>
+                        <div class="grid grid-cols-2 gap-2 text-sm">
+                            <label class="flex items-center gap-2"><input type="radio" name="ocupacion"
+                                    class="text-seu focus:ring-seu"> Docente UNSL</label>
+                            <label class="flex items-center gap-2"><input type="radio" name="ocupacion"
+                                    class="text-seu focus:ring-seu"> Nodocente UNSL</label>
+                            <label class="flex items-center gap-2"><input type="radio" name="ocupacion"
+                                    class="text-seu focus:ring-seu"> Estudiante UNSL</label>
+                            <label class="flex items-center gap-2"><input type="radio" name="ocupacion"
+                                    class="text-seu focus:ring-seu"> Otro</label>
+                        </div>
+                    </fieldset>
+
+                    <div>
+                        <label class="lbl">Comprobante (Si aplica)</label>
+                        <input type="file"
+                            class="fld file:mr-3 file:rounded-sm file:border-0 file:bg-neutral-200 file:px-3 file:py-1">
+                    </div>
+                    <textarea placeholder="Comentarios" class="fld" rows="2"></textarea>
+                    <button type="button"
+                        class="w-full rounded-sm bg-seu py-3 font-semibold text-white hover:bg-seu-dark">Enviar
+                        Inscripción</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Modal: Login -->
+    <dialog id="modalLogin" class="m-auto w-[min(24rem,90vw)] rounded-sm p-0 shadow-2xl backdrop:bg-black/60">
+        <form class="p-8">
+            <div class="flex items-start justify-between">
+                <h2 class="font-serif text-2xl font-semibold">Ingreso</h2><button type="button" data-close
+                    class="hover:bg-neutral-100 rounded-sm p-1"><svg class="h-5 w-5" aria-hidden="true">
+                        <use href="#i-x" />
+                    </svg></button>
+            </div>
+            <div class="mt-6 space-y-4">
+                <input type="email" placeholder="Correo Electrónico" class="fld" required>
+                <input type="password" placeholder="Contraseña" class="fld" required>
+                <label class="flex items-center gap-2 text-sm"><input type="checkbox" class="text-seu focus:ring-seu">
+                    Recordar Contraseña</label>
+                <button type="button"
+                    class="w-full rounded-sm bg-seu py-3 font-semibold text-white hover:bg-seu-dark">Ingresar</button>
+            </div>
+        </form>
+    </dialog>
+
+    <!-- Modal: Registro -->
+    <dialog id="modalRegistro" class="m-auto w-[min(24rem,90vw)] rounded-sm p-0 shadow-2xl backdrop:bg-black/60">
+        <form class="p-8">
+            <div class="flex items-start justify-between">
+                <h2 class="font-serif text-2xl font-semibold">Registrarse</h2><button type="button" data-close
+                    class="hover:bg-neutral-100 rounded-sm p-1"><svg class="h-5 w-5" aria-hidden="true">
+                        <use href="#i-x" />
+                    </svg></button>
+            </div>
+            <div class="mt-6 space-y-4">
+                <input type="email" placeholder="Correo Electrónico" class="fld" required>
+                <input type="password" placeholder="Contraseña" class="fld" required>
+                <input type="password" placeholder="Repetir Contraseña" class="fld" required>
+                <button type="button"
+                    class="w-full rounded-sm bg-seu py-3 font-semibold text-white hover:bg-seu-dark">Registrarse</button>
+            </div>
+        </form>
+    </dialog>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu
+            const btnMenu = document.getElementById('menuBtn');
+            // Header Dropdown
+            const btnForm = document.getElementById('formBtn');
+            const menuForm = document.getElementById('formMenu');
+
+            btnForm.addEventListener('click', () => {
+                const isHidden = menuForm.hidden;
+                menuForm.hidden = !isHidden;
+                btnForm.setAttribute('aria-expanded', !isHidden);
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!btnForm.contains(e.target) && !menuForm.contains(e.target)) {
+                    menuForm.hidden = true;
+                    btnForm.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Agendas Tabs
+            const tabCultural = document.getElementById('tab-cultural');
+            const tabInstitucional = document.getElementById('tab-institucional');
+            const panelCultural = document.getElementById('panel-cultural');
+            const panelInstitucional = document.getElementById('panel-institucional');
+
+            function switchTab(showCul) {
+                if (showCul) {
+                    tabCultural.classList.add('border-seu', 'text-ink');
+                    tabCultural.classList.remove('border-transparent', 'text-neutral-500');
+                    tabInstitucional.classList.remove('border-seu', 'text-ink');
+                    tabInstitucional.classList.add('border-transparent', 'text-neutral-500');
+                    panelCultural.classList.remove('hidden');
+                    panelInstitucional.classList.add('hidden');
+                } else {
+                    tabInstitucional.classList.add('border-seu', 'text-ink');
+                    tabInstitucional.classList.remove('border-transparent', 'text-neutral-500');
+                    tabCultural.classList.remove('border-seu', 'text-ink');
+                    tabCultural.classList.add('border-transparent', 'text-neutral-500');
+                    panelInstitucional.classList.remove('hidden');
+                    panelCultural.classList.add('hidden');
+                }
+            }
+
+            tabCultural.addEventListener('click', () => switchTab(true));
+            tabInstitucional.addEventListener('click', () => switchTab(false));
+
+            // Modals Logic
+            const modals = document.querySelectorAll('dialog');
+            const triggers = document.querySelectorAll('[data-open]');
+            const closers = document.querySelectorAll('[data-close]');
+
+            triggers.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const modalId = btn.getAttribute('data-open');
+                    document.getElementById(modalId).showModal();
+                });
+            });
+
+            closers.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    btn.closest('dialog').close();
+                });
+            });
+
+            modals.forEach(dialog => {
+                dialog.addEventListener('click', (e) => {
+                    if (e.target === dialog) dialog.close(); // Close on backdrop click
+                });
+            });
+
+        });
+    </script>
+</body>
+
+</html>
