@@ -1,14 +1,14 @@
 <?php
 /**
- * Footer del tema SEU UNSL
+ * Footer SEU UNSL
  */
 ?>
-<!-- FOOTER -->
+
 <footer class="border-t border-neutral-200 bg-paper">
   <div class="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:grid-cols-2 lg:grid-cols-4 sm:px-6 lg:px-8">
-    <!-- INFO INSTITUCIONAL -->
+
     <div>
-      <span class="mb-4 grid h-10 w-10 place-items-center rounded-sm bg-ink font-serif text-xs font-semibold text-white">UNSL</span>
+      <span class="mb-4 grid h-10 w-10 place-items-center rounded-sm bg-ink font-sans text-xs font-semibold text-white">UNSL</span>
       <h2 class="font-semibold">Información Institucional</h2>
       <address class="mt-4 text-sm not-italic text-neutral-600 space-y-2">
         <p>Ejército de los Andes 950, San Luis</p>
@@ -17,9 +17,9 @@
       </address>
     </div>
     
-    <!-- CONTACTOS FRECUENTES -->
+
     <div>
-      <span class="mb-4 grid h-10 w-10 place-items-center rounded-sm bg-seu font-serif text-xs font-semibold text-white">SEU</span>
+      <span class="mb-4 grid h-10 w-10 place-items-center rounded-sm bg-seu font-sans text-xs font-semibold text-white">SEU</span>
       <h2 class="font-semibold">Contactos Frecuentes</h2>
       <ul class="mt-4 text-sm text-neutral-600 space-y-2">
         <li>Interno: 5123 - 5321</li>
@@ -28,7 +28,7 @@
       </ul>
     </div>
     
-    <!-- REDES SOCIALES -->
+
     <div>
       <h2 class="font-semibold">Redes Sociales</h2>
       <ul class="mt-4 space-y-3 text-sm text-neutral-600">
@@ -38,7 +38,7 @@
       </ul>
     </div>
     
-    <!-- MAPA DE SITIO Y BOTONES -->
+
     <div>
       <h2 class="font-semibold">Mapa de Sitio</h2>
       <ul class="mt-4 space-y-2 text-sm text-neutral-600">
@@ -55,15 +55,15 @@
   <div class="border-t border-neutral-200 py-6 text-center text-sm text-neutral-600">© <?php echo date('Y'); ?> Secretaría de Extensión Universitaria · Universidad Nacional de San Luis</div>
 </footer>
 
-<!-- MODALES (Se cargan aquí para estar fuera del flujo del DOM) -->
+
 <?php get_template_part( 'template-parts/modals/capacitacion' ); ?>
 <?php get_template_part( 'template-parts/modals/login' ); ?>
 <?php get_template_part( 'template-parts/modals/registro' ); ?>
 
-<!-- Idealmente, este JS iría en un archivo main.js encolado en functions.php -->
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  // Lógica de menús y modales
+
   const btnForm = document.getElementById('formBtn');
   const menuForm = document.getElementById('formMenu');
 
