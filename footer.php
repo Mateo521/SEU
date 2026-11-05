@@ -8,7 +8,7 @@
   <div class="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:grid-cols-2 lg:grid-cols-4 sm:px-6 lg:px-8">
 
     <div>
-      <span class="mb-4 grid h-10 w-10 place-items-center rounded-sm bg-ink font-sans text-xs font-semibold text-white">UNSL</span>
+      <img src="<?php echo esc_url(get_template_directory_uri() . '/logo-unsl.png'); ?>" alt="Logo UNSL" class="h-16 w-auto">
       <h2 class="font-semibold">Información Institucional</h2>
       <address class="mt-4 text-sm not-italic text-neutral-600 space-y-2">
         <p>Ejército de los Andes 950, San Luis</p>
@@ -19,7 +19,7 @@
     
 
     <div>
-      <span class="mb-4 grid h-10 w-10 place-items-center rounded-sm bg-seu font-sans text-xs font-semibold text-white">SEU</span>
+      <img src="<?php echo esc_url(get_template_directory_uri() . '/logo-seu.png'); ?>" alt="Logo SEU" class="h-18 w-auto">
       <h2 class="font-semibold">Contactos Frecuentes</h2>
       <ul class="mt-4 text-sm text-neutral-600 space-y-2">
         <li>Interno: 5123 - 5321</li>
