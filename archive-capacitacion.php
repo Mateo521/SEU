@@ -10,7 +10,7 @@ get_header();
         
         <header class="mb-12 border-b border-neutral-200 pb-6">
             <h1 class="font-sans text-4xl font-semibold sm:text-5xl text-seu">Capacitaciones</h1>
-            <p class="mt-4 text-lg text-neutral-600 max-w-3xl">Explora todos los cursos y talleres abiertos a la comunidad.</p>
+            <p class="mt-4 text-lg text-neutral-600 max-w-3xl">Explorá todos los cursos y talleres abiertos a la comunidad.</p>
         </header>
 
         <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -19,10 +19,10 @@ get_header();
                 $sin_inscripciones = get_field('sin_inscripciones');
             ?>
                 <article class="flex flex-col rounded-sm border border-neutral-200 bg-white transition hover:border-seu">
-                    <div class="aspect-[16/10] bg-neutral-200 overflow-hidden relative">
+                    <div class="aspect-[3.2/4] bg-neutral-200 overflow-hidden relative">
                         <?php if ( has_post_thumbnail() ) : ?>
                             <a href="<?php the_permalink(); ?>">
-                                <?php the_post_thumbnail( 'medium_large', array( 'class' => 'w-full h-full object-cover absolute inset-0' ) ); ?>
+                                <?php the_post_thumbnail( 'medium_large', array( 'class' => 'w-full h-full object-contain absolute inset-0' ) ); ?>
                             </a>
                         <?php endif; ?>
                     </div>

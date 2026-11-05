@@ -80,7 +80,7 @@
             </ul>
           </li>
           <li><a class="rounded-sm px-3 py-2 hover:text-seu" href="<?php echo esc_url(home_url('/proyectos')); ?>">Proyectos</a></li>
-          <li><a class="rounded-sm px-3 py-2 hover:text-seu" href="<?php echo esc_url(home_url('/reservas')); ?>">Reservas</a></li>
+          <li><a class="rounded-sm px-3 py-2 hover:text-seu" href="<?php echo esc_url(home_url('/centro-cultural')); ?>">Reservas</a></li>
           <li><a class="rounded-sm px-3 py-2 hover:text-seu" href="<?php echo esc_url(home_url('/#agendas')); ?>">Agendas</a></li>
           <li><a class="rounded-sm px-3 py-2 hover:text-seu" href="<?php echo esc_url(home_url('/noticias')); ?>">Noticias</a></li>
         </ul>

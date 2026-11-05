@@ -31,7 +31,7 @@ get_header();
                 <div class="grid items-center gap-8 border-b border-neutral-200 bg-gradient-to-br from-white to-neutral-50 p-6 sm:gap-10 sm:p-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:p-12">
                     <div class="order-2 lg:order-1">
                         <?php if ($categoria_nombre) : ?>
-                            <span class="mb-5 inline-block rounded-full border border-neutral-200 bg-white px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-neutral-600 shadow-sm">
+                            <span class="mb-5 inline-block rounded border border-neutral-200 bg-white px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-neutral-600 shadow-sm">
                                 <?php echo esc_html($categoria_nombre); ?>
                             </span>
                         <?php endif; ?>
