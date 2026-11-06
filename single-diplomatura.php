@@ -57,7 +57,7 @@ get_header();
                         <?php endif; ?>
                     </div>
                 </div>
-                <div class=" max-w-4xl px-4 py-8 sm:px-12 sm:py-12">
+                <div class=" max-w-7xl px-4 py-8 sm:px-12 sm:py-12">
                     <div class="prose prose-sm prose-neutral prose-a:text-seu hover:prose-a:text-seu-dark max-w-none text-neutral-700 sm:prose-base">
                         <?php the_content(); ?>
                     </div>

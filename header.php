@@ -103,4 +103,5 @@
           </svg></button>
       </div>
     </div>
+    <?php if ( function_exists('seu_breadcrumbs') ) seu_breadcrumbs(); ?>
   </header>

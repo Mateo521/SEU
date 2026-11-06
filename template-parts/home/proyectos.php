@@ -10,12 +10,12 @@
     </header>
 
     <div class="grid gap-6 lg:grid-cols-3">
-        <article class="rounded-sm border border-neutral-200 p-6 sm:p-8">
+        <article class="rounded-sm border border-neutral-200 p-6 sm:p-8 h-fit">
             <h3 class="font-sans text-2xl font-semibold">Programas</h3>
             <p class="mt-4 text-neutral-600">Políticas universitarias y fortalecimiento de las trayectorias estudiantiles.</p>
         </article>
 
-        <article class="rounded-sm border border-neutral-200 p-6 sm:p-8">
+        <article class="rounded-sm border border-neutral-200 p-6 sm:p-8 h-fit">
             <h3 class="font-sans text-2xl font-semibold">Proyectos</h3>
             <p class="mt-4 text-neutral-600">Proyectos PEIS, PEII y PED. Explorá los proyectos anteriores, las categorías y las convocatorias vigentes.</p>
             <ul class="mt-4 divide-y divide-neutral-200 border-y border-neutral-200" aria-label="Categorías de proyectos">
@@ -34,7 +34,7 @@
             </div>
         </article>
 
-        <article class="rounded-sm border border-neutral-200 p-6 sm:p-8">
+        <article class="rounded-sm border border-neutral-200 p-6 sm:p-8 h-fit">
             <h3 class="font-sans text-2xl font-semibold">Rendición de subsidios</h3>
             <p class="mt-4 text-neutral-600">Encontrá información y documentación para realizar la rendición de los subsidios otorgados a proyectos de extensión.</p>
             <a href="#" class="mt-6 inline-flex items-center gap-2 font-semibold text-seu hover:underline">Ver información <svg class="h-4 w-4" aria-hidden="true"><use href="#i-arrow" /></svg></a>

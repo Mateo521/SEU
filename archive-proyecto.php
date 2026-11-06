@@ -15,10 +15,10 @@ get_header();
             <h1 class="font-sans text-3xl font-semibold sm:text-4xl text-ink leading-tight mb-6">
                 Proyectos de Extensión Universitaria
             </h1>
-            <p class="text-neutral-700 leading-relaxed max-w-4xl text-base mb-4">
+            <p class="text-neutral-700 leading-relaxed max-w-7xl text-base mb-4">
                 Los Proyectos de Extensión Universitaria se orientan a la promoción del desarrollo regional y a la mejora de la calidad de vida de la población. En la nueva normativa se presentan tres modalidades de participación: Proyectos de Extensión de Interés Social, Proyectos de Extensión y Docencia, y Proyectos de Extensión de Interés Institucional.
             </p>
-            <p class="text-neutral-600 leading-relaxed max-w-4xl text-sm mb-4">
+            <p class="text-neutral-600 leading-relaxed max-w-7xl text-sm mb-4">
                 La constitución de estos dispositivos supone reconocer a la sociedad en todas sus dimensiones, desde sua complejidad, diversidad de actores, problemáticas, demandas y potencialidades; generar espacios de comunicación para el trabajo conjunto e interdisciplinario en la identificación de problemas y la puesta en marcha de proyectos de intervención; propiciar la incorporación curricular de la extensión; promover una metodología participativa de los distintos actores sociales involucrados en las instancias de formación, ejecución y evaluación de cada proyecto.
             </p>
             

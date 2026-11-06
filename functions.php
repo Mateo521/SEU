@@ -476,77 +476,48 @@ function seu_datos_columnas_reservas($column, $post_id)
     }
 }
 
-/*
-add_action( 'add_meta_boxes', 'seu_caja_detalles_reserva' );
-function seu_caja_detalles_reserva() {
-    add_meta_box(
-        'detalles_reserva_meta', 
-        'Detalles de la Solicitud de Reserva', 
-        'seu_imprimir_detalles_reserva', 
-        'reserva_cc', 
-        'normal', 
-        'high' 
-    );
-}
-*/
-/*
-function seu_imprimir_detalles_reserva( $post ) {
 
-    $correo      = get_post_meta( $post->ID, 'correo', true );
-    $nombre      = get_post_meta( $post->ID, 'nombre', true );
-    $domicilio   = get_post_meta( $post->ID, 'domicilio', true );
-    $dni         = get_post_meta( $post->ID, 'dni', true );
-    $telefono    = get_post_meta( $post->ID, 'telefono', true );
-    $profesion   = get_post_meta( $post->ID, 'profesion', true );
-    $sala        = get_post_meta( $post->ID, 'sala', true );
-    $actividad   = get_post_meta( $post->ID, 'actividad', true );
-    $fecha       = get_post_meta( $post->ID, 'fecha_evento', true );
-    $h_armado    = get_post_meta( $post->ID, 'hora_armado', true );
-    $h_espectaculo = get_post_meta( $post->ID, 'hora_espectaculo', true );
-    $h_fin       = get_post_meta( $post->ID, 'hora_fin', true );
-    $entidad     = get_post_meta( $post->ID, 'entidad', true );
-    $aval_unsl   = get_post_meta( $post->ID, 'aval_unsl', true );
-    $aval_ajeno  = get_post_meta( $post->ID, 'aval_ajeno', true );
-    $req_tecnicos = get_post_meta( $post->ID, 'req_tecnicos', true );
-    $req_otro    = get_post_meta( $post->ID, 'req_otro', true );
+function seu_breadcrumbs() {
 
-
-    echo '<table class="form-table" style="width: 100%; text-align: left;">';
-    echo '<tbody style="background: #f9f9f9; border: 1px solid #ddd;">';
+    if ( is_front_page() || is_home() ) return;
+    
+    echo '<nav aria-label="Migas de pan" class="bg-paper border-b border-neutral-200 py-4 opacity-80 backdrop-blur-sm">';
+    echo '<ol class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-wrap items-center gap-2 text-sm text-neutral-500">';
+    
+    echo '<li><a href="' . home_url() . '" class="hover:text-seu transition">Inicio</a></li>';
     
 
-    echo '<tr><th colspan="2" style="background:#e5e5e5; padding: 10px;">1. Datos del Solicitante</th></tr>';
-    echo '<tr><th style="padding: 10px; width: 30%;">Nombre:</th><td style="padding: 10px;">' . esc_html($nombre) . '</td></tr>';
-    echo '<tr><th style="padding: 10px;">Correo:</th><td style="padding: 10px;"><a href="mailto:'.esc_attr($correo).'">' . esc_html($correo) . '</a></td></tr>';
-    echo '<tr><th style="padding: 10px;">DNI:</th><td style="padding: 10px;">' . esc_html($dni) . '</td></tr>';
-    echo '<tr><th style="padding: 10px;">Teléfono:</th><td style="padding: 10px;">' . esc_html($telefono) . '</td></tr>';
-    echo '<tr><th style="padding: 10px;">Domicilio:</th><td style="padding: 10px;">' . esc_html($domicilio) . '</td></tr>';
-    echo '<tr><th style="padding: 10px;">Profesión/Rol:</th><td style="padding: 10px;">' . esc_html($profesion) . '</td></tr>';
-
-
-    echo '<tr><th colspan="2" style="background:#e5e5e5; padding: 10px;">2. Detalles de la Actividad</th></tr>';
-    echo '<tr><th style="padding: 10px;">Sala:</th><td style="padding: 10px; font-weight:bold; color:#8a0c18;">' . esc_html($sala) . '</td></tr>';
-    echo '<tr><th style="padding: 10px;">Fecha:</th><td style="padding: 10px;">' . ($fecha ? date_i18n('d de F de Y', strtotime($fecha)) : '') . '</td></tr>';
-    echo '<tr><th style="padding: 10px;">Horarios:</th><td style="padding: 10px;">Armado: <strong>' . esc_html($h_armado) . '</strong> | Espectáculo: <strong>' . esc_html($h_espectaculo) . '</strong> | Fin: <strong>' . esc_html($h_fin) . '</strong></td></tr>';
-    echo '<tr><th style="padding: 10px;">Actividad:</th><td style="padding: 10px;">' . nl2br(esc_html($actividad)) . '</td></tr>';
-    echo '<tr><th style="padding: 10px;">Entidad/Grupo:</th><td style="padding: 10px;">' . esc_html($entidad) . '</td></tr>';
-    
-    if($aval_unsl) echo '<tr><th style="padding: 10px;">Aval UNSL:</th><td style="padding: 10px;">' . esc_html($aval_unsl) . '</td></tr>';
-    if($aval_ajeno) echo '<tr><th style="padding: 10px;">Aval Ajeno:</th><td style="padding: 10px;">' . esc_html($aval_ajeno) . '</td></tr>';
-
-
-    echo '<tr><th colspan="2" style="background:#e5e5e5; padding: 10px;">3. Requerimientos Técnicos</th></tr>';
-    if ( ! empty( $req_tecnicos ) && is_array( $req_tecnicos ) ) {
-        echo '<tr><th style="padding: 10px;">Técnica:</th><td style="padding: 10px;"><ul style="margin:0; padding-left:15px; list-style:disc;">';
-        foreach ( $req_tecnicos as $req ) {
-            echo '<li>' . esc_html($req) . '</li>';
+    if ( is_page() ) {
+        global $post;
+        if ( $post->post_parent ) {
+            $parent_id = $post->post_parent;
+            $breadcrumbs = array();
+            while ( $parent_id ) {
+                $page = get_page( $parent_id );
+                $breadcrumbs[] = '<li><span class="mx-2 text-neutral-300">/</span><a href="' . get_permalink( $page->ID ) . '" class="hover:text-seu transition">' . get_the_title( $page->ID ) . '</a></li>';
+                $parent_id = $page->post_parent;
+            }
+            $breadcrumbs = array_reverse( $breadcrumbs );
+            foreach ( $breadcrumbs as $crumb ) echo $crumb;
         }
-        echo '</ul></td></tr>';
-    } else {
-        echo '<tr><th style="padding: 10px;">Técnica:</th><td style="padding: 10px;"><em>Ninguno seleccionado</em></td></tr>';
+        echo '<li><span class="mx-2 text-neutral-300">/</span><span class="text-ink font-semibold" aria-current="page">' . get_the_title() . '</span></li>';
+    } 
+
+    elseif ( is_archive() ) {
+        echo '<li><span class="mx-2 text-neutral-300">/</span><span class="text-ink font-semibold" aria-current="page">' . post_type_archive_title('', false) . '</span></li>';
+    } 
+
+    elseif ( is_single() ) {
+        $post_type = get_post_type();
+        if ( $post_type != 'post' ) {
+            $post_type_object = get_post_type_object( $post_type );
+            $archive_link = get_post_type_archive_link( $post_type );
+            echo '<li><span class="mx-2 text-neutral-300">/</span><a href="' . $archive_link . '" class="hover:text-seu transition">' . $post_type_object->labels->name . '</a></li>';
+        } else {
+            echo '<li><span class="mx-2 text-neutral-300">/</span><a href="' . home_url('/noticias') . '" class="hover:text-seu transition">Noticias</a></li>';
+        }
+        echo '<li><span class="mx-2 text-neutral-300">/</span><span class="text-ink font-semibold truncate max-w-xs inline-block align-bottom" aria-current="page">' . get_the_title() . '</span></li>';
     }
     
-    if($req_otro) echo '<tr><th style="padding: 10px;">Otros Requerimientos:</th><td style="padding: 10px;">' . esc_html($req_otro) . '</td></tr>';
-
-    echo '</tbody></table>';
-}*/
+    echo '</ol></nav>';
+}
