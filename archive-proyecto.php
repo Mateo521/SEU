@@ -93,7 +93,7 @@ get_header();
         <div class="border-t border-neutral-200 pt-12">
             <h2 class="text-xl font-semibold font-sans text-ink mb-8">Proyectos vigentes</h2>
             
-            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
                 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); 
                     $terminos = get_the_terms( get_the_ID(), 'tipo_proyecto' );
                     $tipo_proyecto = ( $terminos && ! is_wp_error( $terminos ) ) ? $terminos[0]->name : '';

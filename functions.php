@@ -483,48 +483,56 @@ function seu_datos_columnas_reservas($column, $post_id)
 }
 
 
-function seu_breadcrumbs() {
 
-    if ( is_front_page() || is_home() ) return;
-    
-    echo '<nav aria-label="Migas de pan" class="bg-paper border-b border-neutral-200 py-4 opacity-80 backdrop-blur-sm">';
+function seu_breadcrumbs()
+{
+
+    if (is_front_page() || is_home()) return;
+
+    echo '<nav aria-label="Migas de pan" class="bg-paper border-b border-neutral-200 py-3">';
     echo '<ol class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-wrap items-center gap-2 text-sm text-neutral-500">';
-    
-    echo '<li><a href="' . home_url() . '" class="hover:text-seu transition">Inicio</a></li>';
-    
 
-    if ( is_page() ) {
+
+    echo '<li><a href="' . home_url() . '" class="hover:text-seu transition">Inicio</a></li>';
+
+
+    if (is_page()) {
         global $post;
-        if ( $post->post_parent ) {
+
+
+        if (is_page(array('convocatorias', 'sitios-y-programas'))) {
+            $link_proyectos = get_post_type_archive_link('proyecto');
+            echo '<li><span class="mx-2 text-neutral-300">/</span><a href="' . esc_url($link_proyectos) . '" class="hover:text-seu transition">Proyectos</a></li>';
+        }
+
+        if ($post->post_parent) {
             $parent_id = $post->post_parent;
             $breadcrumbs = array();
-            while ( $parent_id ) {
-                $page = get_page( $parent_id );
-                $breadcrumbs[] = '<li><span class="mx-2 text-neutral-300">/</span><a href="' . get_permalink( $page->ID ) . '" class="hover:text-seu transition">' . get_the_title( $page->ID ) . '</a></li>';
+            while ($parent_id) {
+                $page = get_page($parent_id);
+                $breadcrumbs[] = '<li><span class="mx-2 text-neutral-300">/</span><a href="' . get_permalink($page->ID) . '" class="hover:text-seu transition">' . get_the_title($page->ID) . '</a></li>';
                 $parent_id = $page->post_parent;
             }
-            $breadcrumbs = array_reverse( $breadcrumbs );
-            foreach ( $breadcrumbs as $crumb ) echo $crumb;
+            $breadcrumbs = array_reverse($breadcrumbs);
+            foreach ($breadcrumbs as $crumb) echo $crumb;
         }
+
+
         echo '<li><span class="mx-2 text-neutral-300">/</span><span class="text-ink font-semibold" aria-current="page">' . get_the_title() . '</span></li>';
-    } 
-
-    elseif ( is_archive() ) {
+    } elseif (is_archive()) {
         echo '<li><span class="mx-2 text-neutral-300">/</span><span class="text-ink font-semibold" aria-current="page">' . post_type_archive_title('', false) . '</span></li>';
-    } 
-
-    elseif ( is_single() ) {
+    } elseif (is_single()) {
         $post_type = get_post_type();
-        if ( $post_type != 'post' ) {
-            $post_type_object = get_post_type_object( $post_type );
-            $archive_link = get_post_type_archive_link( $post_type );
-            echo '<li><span class="mx-2 text-neutral-300">/</span><a href="' . $archive_link . '" class="hover:text-seu transition">' . $post_type_object->labels->name . '</a></li>';
+        if ($post_type != 'post') {
+            $post_type_object = get_post_type_object($post_type);
+            $archive_link = get_post_type_archive_link($post_type);
+            echo '<li><span class="mx-2 text-neutral-300">/</span><a href="' . esc_url($archive_link) . '" class="hover:text-seu transition">' . esc_html($post_type_object->labels->name) . '</a></li>';
         } else {
+
             echo '<li><span class="mx-2 text-neutral-300">/</span><a href="' . home_url('/noticias') . '" class="hover:text-seu transition">Noticias</a></li>';
         }
         echo '<li><span class="mx-2 text-neutral-300">/</span><span class="text-ink font-semibold truncate max-w-xs inline-block align-bottom" aria-current="page">' . get_the_title() . '</span></li>';
     }
-    
+
     echo '</ol></nav>';
 }
-

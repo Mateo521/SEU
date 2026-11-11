@@ -85,15 +85,16 @@ $header_classes = $is_front
             <button type="button" id="formBtn" class="flex items-center gap-1 rounded-sm px-3 py-2 hover:text-seu transition-colors" aria-expanded="false">Formación <svg class="h-4 w-4" aria-hidden="true">
                 <use href="#i-chev" />
               </svg></button>
-          <li><a class="block px-4 py-2 hover:bg-neutral-50 hover:text-seu transition-colors" href="<?php echo esc_url(home_url('/becas-y-pasantias')); ?>">Becas y Pasantías</a></li>
-          <ul id="formMenu" hidden class="absolute left-0 top-full w-48 rounded-sm border border-neutral-200 bg-white py-1 shadow-lg text-ink">
-            <li><a class="block px-4 py-2 hover:bg-neutral-50 hover:text-seu transition-colors" href="<?php echo esc_url(home_url('/diplomaturas')); ?>">Diplomaturas</a></li>
-            <li><a class="block px-4 py-2 hover:bg-neutral-50 hover:text-seu transition-colors" href="<?php echo esc_url(home_url('/capacitaciones')); ?>">Capacitaciones</a></li>
-          </ul>
+            <ul id="formMenu" hidden class="absolute  z-10  left-0 top-full w-48 rounded-sm border border-neutral-200 bg-white py-1 shadow-lg text-ink">
+              <li><a class="block px-4 py-2 hover:bg-neutral-50 hover:text-seu transition-colors" href="<?php echo esc_url(home_url('/diplomaturas')); ?>">Diplomaturas</a></li>
+              <li><a class="block px-4 py-2 hover:bg-neutral-50 hover:text-seu transition-colors" href="<?php echo esc_url(home_url('/capacitaciones')); ?>">Capacitaciones</a></li>
+            </ul>
           </li>
+          <li><a class="block px-4 py-2 hover:bg-neutral-50 hover:text-seu transition-colors" href="<?php echo esc_url(home_url('/becas-y-pasantias')); ?>">Becas y Pasantías</a></li>
+
           <li><a class="rounded-sm px-3 py-2 hover:text-seu transition-colors" href="<?php echo esc_url(home_url('/proyectos')); ?>">Proyectos</a></li>
           <li><a class="rounded-sm px-3 py-2 hover:text-seu transition-colors" href="<?php echo esc_url(home_url('/centro-cultural')); ?>">Reservas</a></li>
-          <li><a class="rounded-sm px-3 py-2 hover:text-seu transition-colors" href="<?php echo esc_url(home_url('/#agendas')); ?>">Agendas</a></li>
+          <li><a class="rounded-sm px-3 py-2 hover:text-seu transition-colors" href="<?php echo esc_url(home_url('/agenda-eventos')); ?>">Agendas</a></li>
           <li><a class="rounded-sm px-3 py-2 hover:text-seu transition-colors" href="<?php echo esc_url(home_url('/noticias')); ?>">Noticias</a></li>
         </ul>
       </nav>

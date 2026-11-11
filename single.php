@@ -15,7 +15,7 @@ get_header();
             <article class="bg-white rounded-sm shadow-sm border border-neutral-200 overflow-hidden">
 
 
-                <div class="p-8 sm:p-12 border-b border-neutral-200 bg-neutral-50/50">
+                <div class="p-8 sm:p-12 border-b border-neutral-200 bg-svg-politicas">
                     <div class="flex items-center gap-4 text-xs font-semibold uppercase tracking-wider text-seu mb-4">
                         <span>Noticia Institucional</span>
                         <?php if ($cat_nombre) : ?>
@@ -24,7 +24,7 @@ get_header();
                         <?php endif; ?>
                     </div>
                     
-                    <h1 class="font-sans text-2xl font-semibold sm:text-3xl lg:text-5xl text-ink leading-tight mb-4">
+                    <h1 class="font-sans  text-2xl font-semibold sm:text-3xl lg:text-5xl text-ink leading-tight mb-4">
                         <?php the_title(); ?>
                     </h1>
 
@@ -34,10 +34,14 @@ get_header();
                 </div>
 
 
-                <div class="grid lg:grid-cols-3 gap-8 p-8 sm:p-12">
+                <div class="grid lg:grid-cols-1 gap-8 p-8 sm:p-12">
 
 
-                    <div class="lg:col-span-2 prose prose-neutral max-w-none text-neutral-700">
+                    <div class="lg:col-span-2 prose prose-neutral [&_a]:font-bold [&_h2]:text-xl [&_h2]:pt-4 [&_h2]:    pb-2 [&_a]:text-[#213269] [&_a:hover]:text-blue-900 [&_a:hover]:underline [&_table]:my-3 [&_table]:w-full [&_table]:text-left [&_table]:text-sm [&_table]:text-neutral-600 [&_table]:border-collapse
+                                        [&_thead]:bg-neutral-50 [&_thead]:text-ink 
+                                        [&_th]:px-4 [&_th]:py-3 [&_th]:font-semibold [&_th]:border-b [&_th]:border-neutral-200
+                                        [&_td]:px-4 [&_td]:py-3 [&_td]:border-b [&_td]:border-neutral-100
+                                        [&_tr:hover]:bg-neutral-50/50 [&_tr]:transition max-w-none text-neutral-700">
                         <?php the_content(); ?>
 
 

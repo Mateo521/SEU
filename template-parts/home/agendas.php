@@ -39,25 +39,20 @@ $query_institucional = new WP_Query(get_agenda_args('institucional', $hoy));
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex flex-wrap items-end justify-between gap-4 border-b border-neutral-200 pb-4">
             <h2 class="font-sans text-2xl font-semibold sm:text-3xl">Agendas</h2>
-
             <button id="btn-onesignal" class="flex items-center gap-2 rounded-sm border border-seu px-4 py-2 text-sm font-semibold text-seu hover:bg-seu hover:text-white transition">
                 Activar notificaciones
             </button>
         </div>
-
         <div class="mt-8">
-
             <div class="flex gap-6 border-b border-neutral-200" role="tablist">
                 <button id="tab-cultural" class="tab-btn active -mb-px border-b-2 border-seu pb-3 font-semibold text-ink" aria-selected="true">Agenda Cultural</button>
                 <button id="tab-institucional" class="tab-btn -mb-px border-b-2 border-transparent pb-3 font-semibold text-neutral-500 hover:text-ink" aria-selected="false">Agenda Institucional</button>
             </div>
-
             <div id="panel-cultural" class="mt-6 divide-y divide-neutral-200">
                 <?php if ($query_cultural->have_posts()) : while ($query_cultural->have_posts()) : $query_cultural->the_post();
                         $fecha_raw = get_field('fecha_evento');
                         $hora = get_field('hora_evento');
                         $lugar = get_field('lugar_evento');
-
                         if ($fecha_raw) {
                             $timestamp = strtotime($fecha_raw);
                             $dia = date_i18n('j', $timestamp);
@@ -92,13 +87,11 @@ $query_institucional = new WP_Query(get_agenda_args('institucional', $hoy));
                     <p class="py-5 text-sm text-neutral-500">No hay eventos culturales programados próximamente.</p>
                 <?php endif; ?>
             </div>
-
             <div id="panel-institucional" class="mt-6 divide-y divide-neutral-200 hidden">
                 <?php if ($query_institucional->have_posts()) : while ($query_institucional->have_posts()) : $query_institucional->the_post();
                         $fecha_raw = get_field('fecha_evento');
                         $hora = get_field('hora_evento');
                         $lugar = get_field('lugar_evento');
-
                         if ($fecha_raw) {
                             $timestamp = strtotime($fecha_raw);
                             $dia = date_i18n('j', $timestamp);
