@@ -6,6 +6,12 @@ function seu_unsl_theme_setup()
 }
 add_action('after_setup_theme', 'seu_unsl_theme_setup');
 
+function seu_unsl_enqueue_styles()
+{
+    wp_enqueue_style('seu-unsl-style', get_stylesheet_uri(), array(), wp_get_theme()->get('Version'));
+}
+add_action('wp_enqueue_scripts', 'seu_unsl_enqueue_styles');
+
 function seu_unsl_register_cpts()
 {
 
@@ -521,3 +527,4 @@ function seu_breadcrumbs() {
     
     echo '</ol></nav>';
 }
+

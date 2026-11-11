@@ -9,7 +9,7 @@
         <div class="grid gap-6 md:grid-cols-2">
             <article class="group flex flex-col justify-between rounded-sm border border-neutral-200 bg-white p-8 hover:border-seu sm:p-10">
                 <div>
-                    <h3 class="font-sans text-3xl font-semibold">Institucional</h3>
+                    <h3 class="font-sans text-2xl font-semibold">Institucional</h3>
                     <p class="mt-4 max-w-md text-neutral-600">Conocé la misión, las secretarías y el equipo que conforma la red de extensión universitaria en la UNSL.</p>
                 </div>
                 <a href="<?php echo esc_url(home_url('/institucional')); ?>" class="mt-8 inline-flex items-center gap-2 font-medium text-seu underline-offset-4 group-hover:underline">Nuestro equipo <svg class="h-5 w-5" aria-hidden="true">
@@ -18,7 +18,7 @@
             </article>
             <article class="group flex flex-col justify-between rounded-sm border border-neutral-200 bg-white p-8 hover:border-seu sm:p-10">
                 <div>
-                    <h3 class="font-sans text-3xl font-semibold">CAEX</h3>
+                    <h3 class="font-sans text-2xl font-semibold">CAEX</h3>
                     <p class="mt-4 max-w-md text-neutral-600">Comisión Asesora de Extensión Universitaria, responsable de evaluar y orientar las políticas de vinculación.</p>
                 </div>
                 <a href="<?php echo esc_url(home_url('/caex')); ?>" class="mt-8 inline-flex items-center gap-2 font-medium text-seu underline-offset-4 group-hover:underline">Conocer más <svg class="h-5 w-5" aria-hidden="true">

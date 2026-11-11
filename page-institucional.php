@@ -14,7 +14,7 @@ get_header();
             <span class="inline-block rounded-sm border border-seu px-3 py-1 text-xs font-semibold uppercase tracking-wider text-seu mb-4">
                 Secretaría de Extensión Universitaria
             </span>
-            <h1 class="font-sans text-3xl font-semibold sm:text-4xl text-ink leading-tight mb-6">
+            <h1 class="font-sans text-2xl font-semibold sm:text-3xl text-ink leading-tight mb-6">
                 Institucional
             </h1>
             
@@ -43,7 +43,7 @@ get_header();
 
         <section>
             <div class="mb-10">
-                <h2 class="font-sans text-2xl font-semibold sm:text-3xl text-ink">
+                <h2 class="font-sans text-xl font-semibold sm:text-2xl text-ink">
                     Equipo de Gestión Extensionista
                 </h2>
                 <p class="text-neutral-600 mt-2 text-base">Autoridades de la Secretaría y coordinación en las diferentes facultades de la Universidad.</p>
@@ -52,7 +52,7 @@ get_header();
 
             <div class="bg-white rounded-sm border border-neutral-200 p-8 shadow-sm max-w-2xl mb-12  ">
                 <span class="text-xs font-semibold uppercase tracking-wider text-seu block mb-2">Rectorado UNSL</span>
-                <h3 class="text-2xl font-semibold text-ink">Esp. Oscar Ojeda</h3>
+                <h3 class="text-xl font-semibold text-ink">Esp. Oscar Ojeda</h3>
                 <p class="text-base text-neutral-600 font-medium mt-1">Secretario de Extensión Universitaria</p>
             </div>
 

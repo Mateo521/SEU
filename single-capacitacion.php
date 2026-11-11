@@ -25,7 +25,7 @@ get_header();
                 <div class="p-8 border-b border-neutral-200">
                     <div>
                         <span class="inline-block rounded-sm border border-seu px-2 py-0.5 text-xs font-semibold uppercase tracking-wider text-seu mb-4">Capacitación</span>
-                        <h1 class="font-sans text-3xl font-semibold sm:text-4xl text-ink leading-tight mb-4"><?php the_title(); ?></h1>
+                        <h1 class="font-sans text-2xl font-semibold sm:text-3xl text-ink leading-tight mb-4"><?php the_title(); ?></h1>
 
                         <?php if ($sin_inscripciones) : ?>
                             <span class="inline-flex items-center rounded-sm bg-neutral-200 px-4 py-2 text-sm font-semibold text-neutral-500 cursor-not-allowed">Cupo lleno</span>
@@ -39,7 +39,7 @@ get_header();
                 <div class="grid <?php echo $sin_inscripciones ? 'lg:grid-cols-2' : 'lg:grid-cols-3'; ?> gap-8 p-8">
 
                     <div class="<?php echo $sin_inscripciones ? '' : 'lg:col-span-2'; ?> prose prose-neutral max-w-none text-neutral-700">
-                        <h2 class="text-2xl font-semibold font-sans text-ink mb-4">Sobre esta capacitación</h2>
+                        <h2 class="text-xl font-semibold font-sans text-ink mb-4">Sobre esta capacitación</h2>
                         <?php the_content(); ?>
 
 

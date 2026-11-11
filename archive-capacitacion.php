@@ -9,7 +9,7 @@ get_header();
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         <header class="mb-12 border-b border-neutral-200 pb-6">
-            <h1 class="font-sans text-4xl font-semibold sm:text-5xl text-seu">Capacitaciones</h1>
+            <h1 class="font-sans text-3xl font-semibold sm:text-5xl text-seu">Capacitaciones</h1>
             <p class="mt-4 text-lg text-neutral-600 max-w-3xl">Explorá todos los cursos y talleres abiertos a la comunidad.</p>
         </header>
 

@@ -9,7 +9,7 @@ get_header();
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         <header class="mb-12 border-b border-neutral-200 pb-6">
-            <h1 class="font-sans text-4xl font-semibold sm:text-5xl text-seu">Diplomaturas</h1>
+            <h1 class="font-sans text-3xl font-semibold sm:text-5xl text-seu">Diplomaturas</h1>
             <p class="mt-4 text-lg text-neutral-600 max-w-3xl">Trayectos formativos de pregrado y posgrado con certificación de la Universidad Nacional de San Luis, orientados al desarrollo territorial y profesional.</p>
         </header>
 

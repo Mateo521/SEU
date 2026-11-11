@@ -15,7 +15,7 @@ get_header();
             <span class="inline-block rounded-sm border border-seu px-3 py-1 text-xs font-semibold uppercase tracking-wider text-seu mb-4">
                 Comisión Asesora de Extensión Universitaria
             </span>
-            <h1 class="font-sans text-3xl font-semibold sm:text-5xl text-ink leading-tight mb-6">
+            <h1 class="font-sans text-2xl font-semibold sm:text-5xl text-ink leading-tight mb-6">
                 CAEX
             </h1>
 
@@ -57,7 +57,7 @@ get_header();
 
         <section class="mb-16">
             <div class="mb-8 flex items-center justify-between border-b border-neutral-200 pb-4">
-                <h2 class="font-sans text-2xl font-semibold sm:text-3xl text-ink">
+                <h2 class="font-sans text-xl font-semibold sm:text-2xl text-ink">
                     Integrantes
                 </h2>
 

@@ -1,7 +1,5 @@
 <?php
-/**
- * Componente: Capacitaciones y diplomaturas (Glassmorphism & Compacto)
- */
+
 
 $args_capacitaciones = array(
     'post_type'      => 'capacitacion',
@@ -18,24 +16,22 @@ $args_diplomaturas = array(
 $query_diplomaturas = new WP_Query($args_diplomaturas);
 ?>
 
-<!-- Sección principal con fondo gris suave y destellos azules para el efecto Glass -->
+
 <section class="relative overflow-hidden bg-slate-50 py-12">
-    <!-- Destellos decorativos de fondo -->
+   
     <div class="pointer-events-none absolute -top-40 -right-40 h-96 w-96 rounded-full bg-blue-300/20 blur-3xl"></div>
     <div class="pointer-events-none absolute top-40 -left-20 h-72 w-72 rounded-full bg-slate-300/30 blur-3xl"></div>
 
     <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-        <!-- ==========================================
-             SECCIÓN 1: CAPACITACIONES
-             ========================================== -->
+       
         <div id="capacitaciones">
             <div class="mb-6 flex items-end justify-between border-b border-slate-200/60 pb-3">
-                <h2 class="text-2xl font-semibold tracking-tight text-slate-800 sm:text-3xl">Capacitaciones</h2>
+                <h2 class="text-xl font-semibold tracking-tight text-slate-800 sm:text-2xl">Capacitaciones</h2>
                 <a href="<?php echo esc_url(home_url('/capacitaciones')); ?>" class="text-sm font-medium text-blue-600 underline-offset-4 hover:underline">Ver todas</a>
             </div>
 
-            <!-- Grilla compacta de 4 columnas -->
+           
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 <?php
                 if ($query_capacitaciones->have_posts()) :
@@ -43,10 +39,10 @@ $query_diplomaturas = new WP_Query($args_diplomaturas);
                         $sede = get_field('sede');
                         $sin_inscripciones = get_field('sin_inscripciones');
                 ?>
-                        <!-- Tarjeta Glass -->
+                        
                         <article class="group flex flex-col overflow-hidden rounded border border-white/60 bg-white/40 shadow-sm backdrop-blur-md transition-all duration-300  hover:bg-white/60 hover:shadow-md hover:border-blue-200/50">
                             
-                            <!-- Imagen Duotono Azul -->
+                            
                             <div class="relative aspect-[2/3] w-full overflow-hidden">
                                 <?php if (has_post_thumbnail()) : ?>
                                     <?php the_post_thumbnail('medium_large', array('class' => 'absolute inset-0 h-full w-full object-contain    transition duration-500  group-hover:opacity-80')); ?>
@@ -91,7 +87,7 @@ $query_diplomaturas = new WP_Query($args_diplomaturas);
 
         <div id="diplomaturas" class="mt-16">
             <div class="mb-6 flex items-end justify-between border-b border-slate-200/60 pb-3">
-                <h2 class="text-2xl font-semibold tracking-tight text-slate-800 sm:text-3xl">Diplomaturas</h2>
+                <h2 class="text-xl font-semibold tracking-tight text-slate-800 sm:text-2xl">Diplomaturas</h2>
                 <a href="<?php echo esc_url(home_url('/diplomaturas')); ?>" class="text-sm font-medium text-blue-600 underline-offset-4 hover:underline">Ver todas</a>
             </div>
 

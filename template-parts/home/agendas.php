@@ -38,7 +38,7 @@ $query_institucional = new WP_Query(get_agenda_args('institucional', $hoy));
 <section id="agendas" class="bg-paper py-20">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex flex-wrap items-end justify-between gap-4 border-b border-neutral-200 pb-4">
-            <h2 class="font-sans text-3xl font-semibold sm:text-4xl">Agendas</h2>
+            <h2 class="font-sans text-2xl font-semibold sm:text-3xl">Agendas</h2>
 
             <button id="btn-onesignal" class="flex items-center gap-2 rounded-sm border border-seu px-4 py-2 text-sm font-semibold text-seu hover:bg-seu hover:text-white transition">
                 Activar notificaciones
@@ -72,7 +72,7 @@ $query_institucional = new WP_Query(get_agenda_args('institucional', $hoy));
                             <?php endif; ?>
                             
                             <time class="flex h-24 w-16 sm:h-28 shrink-0 flex-col items-center justify-center rounded-sm bg-neutral-50 text-center border border-neutral-100">
-                                <span class="text-3xl font-semibold text-seu"><?php echo esc_html($dia); ?></span>
+                                <span class="text-2xl font-semibold text-seu"><?php echo esc_html($dia); ?></span>
                                 <span class="text-sm font-medium uppercase text-neutral-600"><?php echo esc_html($mes); ?></span>
                             </time>
                             
@@ -113,7 +113,7 @@ $query_institucional = new WP_Query(get_agenda_args('institucional', $hoy));
                             <?php endif; ?>
                             
                             <time class="flex h-24 w-16 sm:h-28 shrink-0 flex-col items-center justify-center rounded-sm bg-neutral-50 text-center border border-neutral-100">
-                                <span class="text-3xl font-semibold text-seu"><?php echo esc_html($dia); ?></span>
+                                <span class="text-2xl font-semibold text-seu"><?php echo esc_html($dia); ?></span>
                                 <span class="text-sm font-medium uppercase text-neutral-600"><?php echo esc_html($mes); ?></span>
                             </time>
                             

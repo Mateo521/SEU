@@ -12,7 +12,7 @@ get_header();
             <span class="inline-block rounded-sm border border-seu px-3 py-1 text-xs font-semibold uppercase tracking-wider text-seu mb-4">
                 Secretaría de Extensión Universitaria
             </span>
-            <h1 class="font-sans text-3xl font-semibold sm:text-4xl text-ink leading-tight mb-4">
+            <h1 class="font-sans text-2xl font-semibold sm:text-3xl text-ink leading-tight mb-4">
                 Noticias
             </h1>
             <p class="text-neutral-600 max-w-3xl leading-relaxed">

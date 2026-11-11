@@ -4,6 +4,17 @@
  */
 ?>
 
+<section class="w-full bg-svg-politicas" aria-labelledby="politicas-inclusion-title">
+  <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+    <h2 id="politicas-inclusion-title" class="mb-6 text-xl font-semibold">Políticas de inclusión, género y cuidado integral</h2>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+      <img src="<?php echo esc_url(get_template_directory_uri() . '/images/500x150discapacidad.jpg'); ?>" alt="Políticas de inclusión" class="h-26 w-full rounded-sm object-contain ">
+      <img src="<?php echo esc_url(get_template_directory_uri() . '/images/500x150prevencionconsumos.jpg'); ?>" alt="Políticas de género" class="h-26 w-full rounded-sm object-contain ">
+      <img src="<?php echo esc_url(get_template_directory_uri() . '/images/500x150protocolo.jpg'); ?>" alt="Cuidado integral" class="h-26 w-full rounded-sm object-contain ">
+    </div>
+  </div>
+</section>
+
 <footer class="border-t border-neutral-200 bg-paper">
   <div class="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:grid-cols-2 lg:grid-cols-4 sm:px-6 lg:px-8">
 

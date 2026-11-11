@@ -24,7 +24,7 @@ get_header();
                         <?php endif; ?>
                     </div>
                     
-                    <h1 class="font-sans text-3xl font-semibold sm:text-4xl lg:text-5xl text-ink leading-tight mb-4">
+                    <h1 class="font-sans text-2xl font-semibold sm:text-3xl lg:text-5xl text-ink leading-tight mb-4">
                         <?php the_title(); ?>
                     </h1>
 

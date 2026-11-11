@@ -35,7 +35,7 @@ get_header();
                                 <?php echo esc_html($categoria_nombre); ?>
                             </span>
                         <?php endif; ?>
-                        <h1 class="mb-6 font-sans text-2xl font-semibold leading-tight text-ink sm:text-3xl lg:text-4xl">
+                        <h1 class="mb-6 font-sans text-xl font-semibold leading-tight text-ink sm:text-2xl lg:text-3xl">
                             <?php the_title(); ?>
                         </h1>
                         <?php if ($url_pdf) : ?>

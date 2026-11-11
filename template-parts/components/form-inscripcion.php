@@ -29,7 +29,7 @@ if ( empty($arancel) || strpos( strtolower($arancel), 'gratuito' ) !== false || 
 
 
     <div class="border-b border-neutral-200 pb-4">
-        <h3 class="font-sans text-2xl font-semibold mb-2">
+        <h3 class="font-sans text-xl font-semibold mb-2">
             Inscripción: <span class="text-seu"><?php echo esc_html( $titulo_curso ); ?></span>
         </h3>
         

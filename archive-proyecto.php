@@ -12,7 +12,7 @@ get_header();
             <span class="inline-block rounded-sm border border-seu px-3 py-1 text-xs font-semibold uppercase tracking-wider text-seu mb-4">
                 Secretaría de Extensión Universitaria
             </span>
-            <h1 class="font-sans text-3xl font-semibold sm:text-4xl text-ink leading-tight mb-6">
+            <h1 class="font-sans text-2xl font-semibold sm:text-3xl text-ink leading-tight mb-6">
                 Proyectos de Extensión Universitaria
             </h1>
             <p class="text-neutral-700 leading-relaxed max-w-7xl text-base mb-4">
@@ -32,7 +32,7 @@ get_header();
         </header>
 
         <section class="mb-16">
-            <h2 class="text-2xl font-semibold font-sans text-ink mb-6 border-b border-neutral-200 pb-2">
+            <h2 class="text-xl font-semibold font-sans text-ink mb-6 border-b border-neutral-200 pb-2">
                 Modalidades de Participación
             </h2>
             <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -56,7 +56,7 @@ get_header();
         </section>
 
         <section class="mb-20">
-            <h2 class="text-2xl font-semibold font-sans text-ink mb-6 border-b border-neutral-200 pb-2">
+            <h2 class="text-xl font-semibold font-sans text-ink mb-6 border-b border-neutral-200 pb-2">
                 Clasificación de proyectos
             </h2>
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -91,7 +91,7 @@ get_header();
         </section>
 
         <div class="border-t border-neutral-200 pt-12">
-            <h2 class="text-2xl font-semibold font-sans text-ink mb-8">Proyectos vigentes</h2>
+            <h2 class="text-xl font-semibold font-sans text-ink mb-8">Proyectos vigentes</h2>
             
             <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); 

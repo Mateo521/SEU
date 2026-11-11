@@ -32,7 +32,7 @@ get_header();
 
     <section id="reservas" class="py-20 bg-white">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 class="mb-2 font-sans text-3xl font-semibold sm:text-4xl">Reserva de espacios</h2>
+            <h2 class="mb-2 font-sans text-2xl font-semibold sm:text-3xl">Reserva de espacios</h2>
             <p class="mb-8 text-neutral-600">Consultá la disponibilidad del Auditorio Mauricio López y el Microcine, y gestioná tu solicitud de reserva en línea.</p>
 
             <a href="<?php echo esc_url(home_url('/centro-cultural')); ?>" class="inline-flex rounded-sm bg-seu px-6 py-3 font-semibold text-white hover:bg-seu-dark transition">
