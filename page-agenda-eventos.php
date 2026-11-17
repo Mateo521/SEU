@@ -89,7 +89,7 @@ function imprimir_tarjeta_evento() {
                     Secretaría de Extensión Universitaria
                 </span>
                 <h1 class="font-sans text-3xl font-semibold sm:text-4xl text-ink leading-tight">
-                    Agenda de Eventos
+                    Agenda de eventos
                 </h1>
             </div>
             <button id="btn-onesignal" class="flex items-center gap-2 rounded-sm border-2 border-seu px-5 py-2.5 text-sm font-semibold text-seu hover:bg-seu hover:text-white transition">

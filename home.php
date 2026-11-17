@@ -4,6 +4,9 @@
  * Plantilla: Noticias
  */
 get_header();
+
+global $wp_query;
+query_posts(array_merge($wp_query->query, array('posts_per_page' => 12)));
 ?>
 
 <main id="contenido" class="py-20 bg-paper">

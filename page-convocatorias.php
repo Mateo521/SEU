@@ -41,7 +41,7 @@ get_header();
                         Formulario de inscripción
                     </button>
                     <a href="#" class="inline-flex items-center gap-2 font-medium text-seu hover:underline px-4 py-3">
-                        Descargar bases y condiciones (PDF)
+                        Descargar bases y condiciones
                     </a>
                 </div>
             </div>

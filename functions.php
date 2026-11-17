@@ -536,3 +536,9 @@ function seu_breadcrumbs()
 
     echo '</ol></nav>';
 }
+
+
+function cargar_iconos_material() {
+    wp_enqueue_style('material-symbols', 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined', array(), null);
+}
+add_action('wp_enqueue_scripts', 'cargar_iconos_material');

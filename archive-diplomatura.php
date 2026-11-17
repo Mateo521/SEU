@@ -3,6 +3,8 @@
  *  muestra todas las diplomaturas 
  */
 get_header(); 
+global $wp_query;
+query_posts(array_merge($wp_query->query, array('posts_per_page' => 12)));
 ?>
 
 <main id="contenido" class="py-20 bg-paper">
@@ -48,7 +50,7 @@ get_header();
                         </div>
                         
                         <a href="<?php the_permalink(); ?>" class="mt-auto inline-flex items-center gap-2 font-medium text-seu underline-offset-4 hover:underline">
-                            Conocer más <svg class="size-4" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+                            Conocer más <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_forward</span>
                         </a>
                     </div>
                 </article>

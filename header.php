@@ -17,6 +17,11 @@ $header_classes = $is_front
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -82,9 +87,7 @@ $header_classes = $is_front
         <ul class="flex items-center gap-1 text-sm font-medium">
           <li><a class="rounded-sm px-3 py-2 hover:text-seu transition-colors" href="<?php echo esc_url(home_url('/#institucional')); ?>">Institucional</a></li>
           <li class="relative">
-            <button type="button" id="formBtn" class="flex items-center gap-1 rounded-sm px-3 py-2 hover:text-seu transition-colors" aria-expanded="false">Formación <svg class="h-4 w-4" aria-hidden="true">
-                <use href="#i-chev" />
-              </svg></button>
+            <button type="button" id="formBtn" class="flex items-center gap-1 rounded-sm px-3 py-2 hover:text-seu transition-colors" aria-expanded="false" aria-controls="formMenu">Formación <span id="formIcon" class="material-symbols-outlined text-base leading-none transition-transform" aria-hidden="true">expand_more</span></button>
             <ul id="formMenu" hidden class="absolute  z-10  left-0 top-full w-48 rounded-sm border border-neutral-200 bg-white py-1 shadow-lg text-ink">
               <li><a class="block px-4 py-2 hover:bg-neutral-50 hover:text-seu transition-colors" href="<?php echo esc_url(home_url('/diplomaturas')); ?>">Diplomaturas</a></li>
               <li><a class="block px-4 py-2 hover:bg-neutral-50 hover:text-seu transition-colors" href="<?php echo esc_url(home_url('/capacitaciones')); ?>">Capacitaciones</a></li>
@@ -93,32 +96,59 @@ $header_classes = $is_front
           <li><a class="block px-4 py-2 hover:bg-neutral-50 hover:text-seu transition-colors" href="<?php echo esc_url(home_url('/becas-y-pasantias')); ?>">Becas y Pasantías</a></li>
 
           <li><a class="rounded-sm px-3 py-2 hover:text-seu transition-colors" href="<?php echo esc_url(home_url('/proyectos')); ?>">Proyectos</a></li>
+
+
           <li><a class="rounded-sm px-3 py-2 hover:text-seu transition-colors" href="<?php echo esc_url(home_url('/centro-cultural')); ?>">Reservas</a></li>
           <li><a class="rounded-sm px-3 py-2 hover:text-seu transition-colors" href="<?php echo esc_url(home_url('/agenda-eventos')); ?>">Agendas</a></li>
           <li><a class="rounded-sm px-3 py-2 hover:text-seu transition-colors" href="<?php echo esc_url(home_url('/noticias')); ?>">Noticias</a></li>
+          <li><a class="rounded-sm px-3 py-2 hover:text-seu transition-colors" href="<?php echo esc_url(home_url('/premios')); ?>">Premios</a></li>
+
         </ul>
       </nav>
 
-      <div class="flex items-center gap-1">
-        <ul class="hidden items-center sm:flex" aria-label="Redes sociales">
-          <li><a href="#" class="grid h-10 w-10 place-items-center rounded-sm hover:text-seu transition-colors" aria-label="Facebook"><svg class="h-5 w-5" aria-hidden="true">
-                <use href="#i-fb" />
-              </svg></a></li>
-          <li><a href="#" class="grid h-10 w-10 place-items-center rounded-sm hover:text-seu transition-colors" aria-label="Instagram"><svg class="h-5 w-5" aria-hidden="true">
-                <use href="#i-ig" />
-              </svg></a></li>
-          <li><a href="#" class="grid h-10 w-10 place-items-center rounded-sm hover:text-seu transition-colors" aria-label="YouTube"><svg class="h-5 w-5" aria-hidden="true">
-                <use href="#i-yt" />
-              </svg></a></li>
-        </ul>
-        <button type="button" id="menuBtn" class="grid h-10 w-10 place-items-center rounded-sm lg:hidden hover:text-seu transition-colors" aria-label="Menú"><svg class="h-6 w-6" aria-hidden="true">
-            <use href="#i-menu" />
-          </svg></button>
-      </div>
+
+
     </div>
     <?php if (function_exists('seu_breadcrumbs')) seu_breadcrumbs(); ?>
   </header>
 
+  <?php
+  ?>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const button = document.getElementById('formBtn');
+      const menu = document.getElementById('formMenu');
+      const icon = document.getElementById('formIcon');
+
+      if (!button || !menu) return;
+
+      function setMenuOpen(open) {
+        button.setAttribute('aria-expanded', String(open));
+        menu.hidden = !open;
+        menu.classList.toggle('hidden', !open);
+        menu.style.display = open ? 'block' : 'none';
+        if (icon) {
+          icon.textContent = open ? 'expand_less' : 'expand_more';
+          icon.classList.toggle('rotate-180', open);
+        }
+      }
+
+      button.addEventListener('click', function() {
+        setMenuOpen(button.getAttribute('aria-expanded') !== 'true');
+      });
+
+      document.addEventListener('click', function(event) {
+        if (!button.contains(event.target) && !menu.contains(event.target)) setMenuOpen(false);
+      });
+
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+          setMenuOpen(false);
+          button.focus();
+        }
+      });
+    });
+  </script>
   <?php
   if ($is_front) : ?>
     <script>

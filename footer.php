@@ -43,9 +43,9 @@
     <div>
       <h2 class="font-semibold">Redes Sociales</h2>
       <ul class="mt-4 space-y-3 text-sm text-neutral-600">
-        <li><a href="#" class="flex items-center gap-2 hover:text-seu"><svg class="h-5 w-5" aria-hidden="true"><use href="#i-fb"/></svg>Facebook</a></li>
-        <li><a href="#" class="flex items-center gap-2 hover:text-seu"><svg class="h-5 w-5" aria-hidden="true"><use href="#i-ig"/></svg>Instagram</a></li>
-        <li><a href="#" class="flex items-center gap-2 hover:text-seu"><svg class="h-5 w-5" aria-hidden="true"><use href="#i-yt"/></svg>YouTube</a></li>
+        <li><a href="#" class="flex items-center gap-2 hover:text-seu"><span class="material-symbols-outlined" aria-hidden="true">public</span>Facebook</a></li>
+        <li><a href="#" class="flex items-center gap-2 hover:text-seu"><span class="material-symbols-outlined" aria-hidden="true">photo_camera</span>Instagram</a></li>
+        <li><a href="#" class="flex items-center gap-2 hover:text-seu"><span class="material-symbols-outlined" aria-hidden="true">smart_display</span>YouTube</a></li>
       </ul>
     </div>
     

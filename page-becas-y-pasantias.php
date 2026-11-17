@@ -52,8 +52,9 @@ get_header();
                 
                 <div class="bg-white border-t-4 border-t-seu border-x border-b border-neutral-200 rounded-sm p-6 shadow-sm">
                     <h3 class="font-semibold text-lg text-ink mb-4 flex items-center gap-2">
-                        <svg class="size-5 text-seu" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-                        Requisitos para Aspirantes
+                        <span class="material-symbols-outlined size-5 text-seu" aria-hidden="true">groups</span>
+                        
+                        Requisitos para aspirantes
                     </h3>
                     <ul class="text-sm text-neutral-600 space-y-3">
                         <li class="flex items-start gap-2">
@@ -77,7 +78,7 @@ get_header();
 
                 
                 <div class="bg-neutral-50 border border-neutral-200 rounded-sm p-6">
-                    <h3 class="font-semibold text-lg text-ink mb-4">Procedimiento de Postulación</h3>
+                    <h3 class="font-semibold text-lg text-ink mb-4">Procedimiento de postulación</h3>
                     <ol class="text-sm text-neutral-600 space-y-4 list-decimal list-inside">
                         <li>Presentación de postulaciones por <strong>Mesa de Entradas</strong> de la Unidad Académica correspondiente.</li>
                         <li>Revisión formal para verificar cumplimiento de requisitos.</li>
@@ -88,7 +89,7 @@ get_header();
 
                 
                 <a href="#" class="block w-full text-center bg-white border border-neutral-200 rounded-sm p-4 text-sm font-medium text-seu hover:bg-neutral-50 transition">
-                    Ver Normativa de Becas (PDF)
+                    Ver normativa de becas
                 </a>
 
             </aside>

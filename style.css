@@ -11,3 +11,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 background-attachment: local;
 background-size: cover;
 }
+.swiper-pagination-bullet-active{
+
+background-color: #6e6e6efb !important;
+}

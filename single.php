@@ -12,7 +12,7 @@ get_header();
             $terminos = get_the_terms(get_the_ID(), 'categoria_noticia');
             $cat_nombre = ($terminos && !is_wp_error($terminos)) ? $terminos[0]->name : '';
         ?>
-            <article class="bg-white rounded-sm shadow-sm border border-neutral-200 overflow-hidden">
+            <article class="bg-white rounded-sm shadow-sm border border-neutral-200 overflow-clip">
 
 
                 <div class="p-8 sm:p-12 border-b border-neutral-200 bg-svg-politicas">
@@ -34,10 +34,10 @@ get_header();
                 </div>
 
 
-                <div class="grid lg:grid-cols-1 gap-8 p-8 sm:p-12">
+                <div class="grid grid-cols-1 md:grid-cols-[70%_1fr] gap-8 p-8 sm:p-12">
 
 
-                    <div class="lg:col-span-2 prose prose-neutral [&_a]:font-bold [&_h2]:text-xl [&_h2]:pt-4 [&_h2]:    pb-2 [&_a]:text-[#213269] [&_a:hover]:text-blue-900 [&_a:hover]:underline [&_table]:my-3 [&_table]:w-full [&_table]:text-left [&_table]:text-sm [&_table]:text-neutral-600 [&_table]:border-collapse
+                    <div class=" prose prose-neutral [&_a]:font-bold [&_h2]:text-xl [&_h2]:pt-4 [&_h2]:    pb-2 [&_a]:text-[#213269] [&_a:hover]:text-blue-900 [&_a:hover]:underline [&_table]:my-3 [&_table]:w-full [&_table]:text-left [&_table]:text-sm [&_table]:text-neutral-600 [&_table]:border-collapse
                                         [&_thead]:bg-neutral-50 [&_thead]:text-ink 
                                         [&_th]:px-4 [&_th]:py-3 [&_th]:font-semibold [&_th]:border-b [&_th]:border-neutral-200
                                         [&_td]:px-4 [&_td]:py-3 [&_td]:border-b [&_td]:border-neutral-100
@@ -54,7 +54,7 @@ get_header();
                     </div>
 
 
-                    <aside class="space-y-6">
+                    <aside class="space-y-6 sticky top-32 pt-3 h-fit">
                         <?php if (has_post_thumbnail()) : ?>
                             <div class="aspect-[4/3] bg-neutral-100 rounded-sm overflow-hidden border border-neutral-200">
                                 <?php the_post_thumbnail('large', array('class' => 'w-full h-full object-cover')); ?>
@@ -85,6 +85,7 @@ get_header();
                     </aside>
 
                 </div>
+
             </article>
         <?php endwhile; ?>
 

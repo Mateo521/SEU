@@ -42,7 +42,7 @@ get_header();
 
 
                     <div class="lg:col-span-4 lg:sticky lg:top-32">
-                        <h2 class="text-3xl font-sans font-semibold text-ink mb-6">Premio Polo Godoy Rojo</h2>
+                        <h2 class="text-2xl pt-4 font-sans font-semibold text-ink mb-6">Premio Polo Godoy Rojo</h2>
                         <div class="prose prose-neutral text-neutral-600 mb-8">
                             <p>Este premio se ha consolidado a lo largo de sus ediciones, destacándose por su contribución a distinguir la tarea de los artistas en San Luis, en variados rubros y categorías.</p>
                             <p>La primera edición estuvo destinada a reconocer el aporte en Letras, inspirada en la memoria del gran escritor puntano. Luego se entregó en reconocimiento a las Danzas, Fotografía, Escultura, Música, Teatro y Pintura.</p>
@@ -98,7 +98,7 @@ get_header();
                 <div class="grid lg:grid-cols-12 gap-12 items-start">
 
                     <div class="lg:col-span-4 lg:sticky lg:top-32">
-                        <h2 class="text-3xl font-sans font-semibold text-ink mb-6">Premio Rector Mauricio Amílcar López</h2>
+                        <h2 class="text-2xl pt-4 font-sans font-semibold text-ink mb-6">Premio Rector Mauricio Amílcar López</h2>
                         <div class="prose prose-neutral text-neutral-600 mb-8">
                             <p>Otorgado anualmente a la persona o institución que se haya destacado en la defensa y promoción de los Derechos Humanos.</p>
                             <p>El premio lleva el nombre del primer Rector de la UNSL, filósofo, profesor y persona ejemplar víctima de la dictadura militar, secuestrado y desaparecido el 1 de enero de 1977. La Universidad asume esta tarea en fidelidad a su memoria y labor.</p>

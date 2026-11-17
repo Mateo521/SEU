@@ -3,24 +3,17 @@
  * Componente: Calendario dinámico
  * 
  */
-
-
 $sala_activa  = isset($_GET['sala']) ? sanitize_text_field($_GET['sala']) : 'AUDITORIO';
 $vista_activa = isset($_GET['vista']) ? sanitize_text_field($_GET['vista']) : 'semana';
 $fecha_base   = isset($_GET['fecha']) ? sanitize_text_field($_GET['fecha']) : date('Y-m-d', current_time('timestamp'));
-
-
 $fechas_mostrar = array();
 if ($vista_activa === 'dia') {
     $fechas_mostrar[] = $fecha_base;
 } else {
-
     for ($i = 0; $i < 7; $i++) {
         $fechas_mostrar[] = date('Y-m-d', strtotime("+$i days", strtotime($fecha_base)));
     }
 }
-
-
 $meta_query = array(
     'relation' => 'AND',
     array(
@@ -29,8 +22,6 @@ $meta_query = array(
         'compare' => '='
     )
 );
-
-
 if ($vista_activa === 'dia') {
     $meta_query[] = array(
         'key'     => 'fecha_evento',
@@ -46,7 +37,6 @@ if ($vista_activa === 'dia') {
         'type'    => 'DATE'
     );
 }
-
 $args = array(
     'post_type'      => 'reserva_cc', 
     'post_status'    => 'publish', 
@@ -54,25 +44,20 @@ $args = array(
     'meta_query'     => $meta_query
 );
 $query_reservas = new WP_Query($args);
-
-
 $mapa_ocupacion = array();
 if ($query_reservas->have_posts()) {
     while ($query_reservas->have_posts()) {
         $query_reservas->the_post();
         $fecha = get_post_meta(get_the_ID(), 'fecha_evento', true);
         
-
         $h_ini = intval(substr(get_post_meta(get_the_ID(), 'hora_armado', true), 0, 2));
         $h_fin = intval(substr(get_post_meta(get_the_ID(), 'hora_fin', true), 0, 2));
         
-
         if (!$h_ini) {
             $hora_exacta = get_post_meta(get_the_ID(), 'hora', true); 
             $h_ini = intval(substr($hora_exacta, 0, 2));
             $h_fin = $h_ini;
         }
-
         for ($h = $h_ini; $h <= $h_fin; $h++) {
             $hora_str = sprintf("%02d:00", $h);
             $mapa_ocupacion[$fecha][$hora_str] = true;
@@ -85,7 +70,7 @@ $horas_dia = ['08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15
 ?>
 
 <section class="py-12">
-    <!-- CONTROLES DEL CALENDARIO -->
+
     <form id="form-filtros-calendario" method="GET" class="mb-6 flex flex-wrap items-center gap-6 bg-white p-5 border border-neutral-200 rounded-sm shadow-sm">
         
         <div class="flex items-center gap-2">
@@ -105,12 +90,12 @@ $horas_dia = ['08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15
         </div>
 
         <div class="flex items-center gap-2">
-            <label for="fecha" class="text-sm font-semibold text-ink">Fecha Inicial:</label>
+            <label for="fecha" class="text-sm font-semibold text-ink">Fecha inicial:</label>
             <input type="date" name="fecha" id="fecha" value="<?php echo esc_attr($fecha_base); ?>" class="rounded-sm border-neutral-300 bg-neutral-50 px-3 py-2 text-sm text-neutral-700 focus:border-seu focus:ring-seu outline-none transition">
         </div>
     </form>
 
-    <!-- GRILLA DEL CALENDARIO -->
+
     <div class="overflow-x-auto rounded-sm border border-neutral-200 shadow-sm">
         <table class="w-full text-left text-sm whitespace-nowrap">
             <thead class="bg-neutral-100 text-ink border-b border-neutral-200">
