@@ -24,7 +24,7 @@ $header_classes = $is_front
         extend: {
           fontFamily: {
             sans: ['"PT Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-            serif: ['"Newsreader"', 'Georgia', 'serif'],
+            serif: ['"PT Sans"', 'Georgia', 'serif'],
           },
           colors: {
             seu: {

@@ -18,20 +18,20 @@ $query_diplomaturas = new WP_Query($args_diplomaturas);
 
 
 <section class="relative overflow-hidden bg-slate-50 py-12">
-   
+
     <div class="pointer-events-none absolute -top-40 -right-40 h-96 w-96 rounded-full bg-blue-300/20 blur-3xl"></div>
     <div class="pointer-events-none absolute top-40 -left-20 h-72 w-72 rounded-full bg-slate-300/30 blur-3xl"></div>
 
     <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-       
+
         <div id="capacitaciones">
             <div class="mb-6 flex items-end justify-between border-b border-slate-200/60 pb-3">
                 <h2 class="text-xl font-semibold tracking-tight text-slate-800 sm:text-2xl">Capacitaciones</h2>
-                <a href="<?php echo esc_url(home_url('/capacitaciones')); ?>" class="text-sm font-medium text-blue-600 underline-offset-4 hover:underline">Ver todas</a>
+                <a href="<?php echo esc_url(home_url('/capacitaciones')); ?>" class="text-sm font-medium text-[#39436F] underline-offset-4 hover:underline">Ver todas</a>
             </div>
 
-           
+
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 <?php
                 if ($query_capacitaciones->have_posts()) :
@@ -39,10 +39,10 @@ $query_diplomaturas = new WP_Query($args_diplomaturas);
                         $sede = get_field('sede');
                         $sin_inscripciones = get_field('sin_inscripciones');
                 ?>
-                        
+
                         <article class="group flex flex-col overflow-hidden rounded border border-white/60 bg-white/40 shadow-sm backdrop-blur-md transition-all duration-300  hover:bg-white/60 hover:shadow-md hover:border-blue-200/50">
-                            
-                            
+
+
                             <div class="relative aspect-[2/3] w-full overflow-hidden">
                                 <?php if (has_post_thumbnail()) : ?>
                                     <?php the_post_thumbnail('medium_large', array('class' => 'absolute inset-0 h-full w-full object-contain    transition duration-500  group-hover:opacity-80')); ?>
@@ -50,7 +50,7 @@ $query_diplomaturas = new WP_Query($args_diplomaturas);
                             </div>
 
                             <div class="flex flex-1 flex-col p-4">
-                                <h3 class="mb-2 text-base font-semibold leading-snug text-slate-800 transition group-hover:text-blue-700">
+                                <h3 class="mb-2 text-base font-semibold leading-snug text-slate-800 transition group-hover:text-[#2D3863]">
                                     <a class="focus:outline-none" href="<?php the_permalink(); ?>">
                                         <span class="absolute inset-0"></span>
                                         <?php the_title(); ?>
@@ -65,8 +65,8 @@ $query_diplomaturas = new WP_Query($args_diplomaturas);
                                     <?php if ($sin_inscripciones) : ?>
                                         <span class="text-[11px] font-bold uppercase tracking-wide text-slate-400">Cupo lleno</span>
                                     <?php else : ?>
-                                        <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-600 transition group-hover:text-blue-800">
-                                            Inscribirse 
+                                        <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#39436F] transition group-hover:text-blue-[#222947]">
+                                            Inscribirse
                                             <svg class="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                                 <path d="M5 12h14M13 6l6 6-6 6"></path>
                                             </svg>
@@ -88,7 +88,7 @@ $query_diplomaturas = new WP_Query($args_diplomaturas);
         <div id="diplomaturas" class="mt-16">
             <div class="mb-6 flex items-end justify-between border-b border-slate-200/60 pb-3">
                 <h2 class="text-xl font-semibold tracking-tight text-slate-800 sm:text-2xl">Diplomaturas</h2>
-                <a href="<?php echo esc_url(home_url('/diplomaturas')); ?>" class="text-sm font-medium text-blue-600 underline-offset-4 hover:underline">Ver todas</a>
+                <a href="<?php echo esc_url(home_url('/diplomaturas')); ?>" class="text-sm font-medium text-[#39436F] underline-offset-4 hover:underline">Ver todas</a>
             </div>
 
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -114,7 +114,7 @@ $query_diplomaturas = new WP_Query($args_diplomaturas);
                             </div>
 
                             <div class="flex flex-1 flex-col p-5">
-                                <h3 class="mb-2 text-lg font-semibold leading-tight text-slate-800 transition group-hover:text-blue-700">
+                                <h3 class="mb-2 text-lg font-semibold leading-tight text-slate-800 transition group-hover:text-[#2D3863]">
                                     <a class="focus:outline-none" href="<?php the_permalink(); ?>">
                                         <span class="absolute inset-0"></span>
                                         <?php the_title(); ?>
@@ -125,8 +125,8 @@ $query_diplomaturas = new WP_Query($args_diplomaturas);
                                     <?php the_excerpt(); ?>
                                 </div>
 
-                                <div class="mt-4 flex items-center text-xs font-semibold text-blue-600 transition group-hover:text-blue-800">
-                                    Ver diplomatura 
+                                <div class="mt-4 flex items-center text-xs font-semibold text-[#39436F] transition group-hover:text-blue-[#222947]">
+                                    Ver diplomatura
                                     <svg class="ml-1 h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                         <path d="M5 12h14M13 6l6 6-6 6"></path>
                                     </svg>
