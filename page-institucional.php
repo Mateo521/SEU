@@ -11,7 +11,7 @@ get_header();
         
 
         <header class="mb-16 border-b border-neutral-200 pb-12">
-            <span class="inline-block rounded-sm border border-seu px-3 py-1 text-xs font-semibold uppercase tracking-wider text-seu mb-4">
+            <span class="inline-block rounded-sm border border-seu px-3 py-1 text-base font-semibold uppercase tracking-wider text-seu mb-4">
                 Secretaría de Extensión Universitaria
             </span>
             <h1 class="font-sans text-2xl font-semibold sm:text-3xl text-ink leading-tight mb-6">
@@ -51,7 +51,7 @@ get_header();
 
 
             <div class="bg-white rounded-sm border border-neutral-200 p-8 shadow-sm max-w-2xl mb-12  ">
-                <span class="text-xs font-semibold uppercase tracking-wider text-seu block mb-2">Rectorado UNSL</span>
+                <span class="text-base font-semibold uppercase tracking-wider text-seu block mb-2">Rectorado UNSL</span>
                 <h3 class="text-xl font-semibold text-ink">Esp. Oscar Ojeda</h3>
                 <p class="text-base text-neutral-600 font-medium mt-1">Secretario de Extensión Universitaria</p>
             </div>

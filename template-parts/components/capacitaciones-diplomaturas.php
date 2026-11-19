@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Componente: Capacitaciones y Diplomaturas
+ */
 
 $args_capacitaciones = array(
     'post_type'      => 'capacitacion',
@@ -16,61 +19,70 @@ $args_diplomaturas = array(
 $query_diplomaturas = new WP_Query($args_diplomaturas);
 ?>
 
-
-<section class="relative overflow-hidden bg-slate-50 py-12">
-
-    <div class="pointer-events-none absolute -top-40 -right-40 h-96 w-96 rounded-full bg-blue-300/20 blur-3xl"></div>
-    <div class="pointer-events-none absolute top-40 -left-20 h-72 w-72 rounded-full bg-slate-300/30 blur-3xl"></div>
-
-    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<section class="border-t border-neutral-200 bg-white py-6 text-ink" style="font-family: 'Poppins', sans-serif;">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
 
         <div id="capacitaciones">
-            <div class="mb-6 flex items-end justify-between border-b border-slate-200/60 pb-3">
-                <h2 class="text-xl font-semibold tracking-tight text-slate-800 sm:text-2xl">Capacitaciones</h2>
-                <a href="<?php echo esc_url(home_url('/capacitaciones')); ?>" class="text-sm font-medium text-[#39436F] underline-offset-4 hover:underline">Ver todas</a>
+            <div class="mb-10 flex flex-col justify-between gap-4 border-b border-neutral-300 pb-6 sm:flex-row sm:items-end">
+                <div>
+
+                    <h2 class="mt-2 font-sans text-3xl font-light tracking-tight text-ink sm:text-4xl lg:text-5xl">
+                        Capacitaciones
+                    </h2>
+                </div>
+                <a href="<?php echo esc_url(home_url('/capacitaciones')); ?>" class="group inline-flex items-center gap-1.5 border-b border-neutral-900 pb-0.5 text-sm font-medium text-ink transition hover:border-seu hover:text-seu">
+                    <span>Ver todas</span>
+                    <span class="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">north_east</span>
+                </a>
             </div>
 
-
-            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                <?php
-                if ($query_capacitaciones->have_posts()) :
+            <?php if ($query_capacitaciones->have_posts()) : ?>
+                <div class="grid grid-cols-1 gap-px border border-neutral-200 bg-neutral-200 sm:grid-cols-2 lg:grid-cols-4">
+                    <?php
                     while ($query_capacitaciones->have_posts()) : $query_capacitaciones->the_post();
-                        $sede = get_field('sede');
+                        $sede              = get_field('sede');
                         $sin_inscripciones = get_field('sin_inscripciones');
-                ?>
+                    ?>
+                        <article class="group relative flex flex-col bg-white transition-colors duration-300 hover:bg-neutral-50">
 
-                        <article class="group flex flex-col overflow-hidden rounded border border-white/60 bg-white/40 shadow-sm backdrop-blur-md transition-all duration-300  hover:bg-white/60 hover:shadow-md hover:border-blue-200/50">
-
-
-                            <div class="relative aspect-[2/3] w-full overflow-hidden">
+                            <div class="relative aspect-[2/3] w-full overflow-hidden border-b border-neutral-200 bg-neutral-100 p-3">
                                 <?php if (has_post_thumbnail()) : ?>
-                                    <?php the_post_thumbnail('medium_large', array('class' => 'absolute inset-0 h-full w-full object-contain    transition duration-500  group-hover:opacity-80')); ?>
+                                    <?php the_post_thumbnail('medium_large', array('class' => 'h-full w-full object-contain transition duration-500 ')); ?>
+                                <?php else : ?>
+                                    <div class="flex h-full w-full items-center justify-center text-neutral-300">
+                                        <span class="material-symbols-outlined text-[40px] [font-variation-settings:'wght'_200]">school</span>
+                                    </div>
+                                <?php endif; ?>
+
+                                <?php if ($sin_inscripciones) : ?>
+                                    <span class="absolute top-3 left-3 bg-neutral-950 px-2.5 py-1 text-[10px] font-medium uppercase tracking-wider text-white">
+                                        Cupo lleno
+                                    </span>
                                 <?php endif; ?>
                             </div>
 
-                            <div class="flex flex-1 flex-col p-4">
-                                <h3 class="mb-2 text-base font-semibold leading-snug text-slate-800 transition group-hover:text-[#2D3863]">
+                            <div class="flex flex-1 flex-col p-5">
+                                <h3 class="text-base font-medium leading-snug text-ink transition-colors group-hover:text-seu">
                                     <a class="focus:outline-none" href="<?php the_permalink(); ?>">
-                                        <span class="absolute inset-0"></span>
+                                        <span class="absolute inset-0" aria-hidden="true"></span>
                                         <?php the_title(); ?>
                                     </a>
                                 </h3>
 
                                 <?php if ($sede) : ?>
-                                    <p class="mb-3 text-xs text-slate-500">Sede: <?php echo esc_html($sede); ?></p>
+                                    <p class="mt-3 flex items-center gap-1.5 text-base text-neutral-500">
+                                        <span class="material-symbols-outlined text-[15px] text-neutral-400 [font-variation-settings:'wght'_300]">location_on</span>
+                                        <span><?php echo esc_html($sede); ?></span>
+                                    </p>
                                 <?php endif; ?>
 
-                                <div class="mt-auto border-t border-slate-200/50 pt-3">
+                                <div class="mt-auto flex items-center justify-between border-t border-neutral-200 pt-4 text-base">
                                     <?php if ($sin_inscripciones) : ?>
-                                        <span class="text-[11px] font-bold uppercase tracking-wide text-slate-400">Cupo lleno</span>
+                                        <span class="font-medium uppercase tracking-wider text-neutral-400">Inscripción cerrada</span>
                                     <?php else : ?>
-                                        <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#39436F] transition group-hover:text-blue-[#222947]">
-                                            Inscribirse
-                                            <svg class="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                                <path d="M5 12h14M13 6l6 6-6 6"></path>
-                                            </svg>
-                                        </span>
+                                        <span class="font-medium text-ink transition-colors group-hover:text-seu">Inscribirse</span>
+                                        <span class="material-symbols-outlined text-[16px] text-neutral-400 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-seu">north_east</span>
                                     <?php endif; ?>
                                 </div>
                             </div>
@@ -78,69 +90,81 @@ $query_diplomaturas = new WP_Query($args_diplomaturas);
                     <?php
                     endwhile;
                     wp_reset_postdata();
-                else :
                     ?>
-                    <p class="col-span-full text-sm text-slate-500">Próximamente nuevas capacitaciones.</p>
-                <?php endif; ?>
-            </div>
+                </div>
+            <?php else : ?>
+                <div class="border border-neutral-200 bg-neutral-50 p-8 text-sm text-neutral-500">
+                    Próximamente nuevas capacitaciones.
+                </div>
+            <?php endif; ?>
         </div>
 
-        <div id="diplomaturas" class="mt-16">
-            <div class="mb-6 flex items-end justify-between border-b border-slate-200/60 pb-3">
-                <h2 class="text-xl font-semibold tracking-tight text-slate-800 sm:text-2xl">Diplomaturas</h2>
-                <a href="<?php echo esc_url(home_url('/diplomaturas')); ?>" class="text-sm font-medium text-[#39436F] underline-offset-4 hover:underline">Ver todas</a>
+        <div id="diplomaturas" class="mt-24">
+            <div class="mb-10 flex flex-col justify-between gap-4 border-b border-neutral-300 pb-6 sm:flex-row sm:items-end">
+
+                <h2 class="mt-2 font-sans text-3xl font-light tracking-tight text-ink sm:text-4xl lg:text-5xl">
+                    Diplomaturas
+                </h2>
+
+                <a href="<?php echo esc_url(home_url('/diplomaturas')); ?>" class="group inline-flex items-center gap-1.5 border-b border-neutral-900 pb-0.5 text-sm font-medium text-ink transition hover:border-seu hover:text-seu">
+                    <span>Ver todas</span>
+                    <span class="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">north_east</span>
+                </a>
             </div>
 
-            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                <?php
-                if ($query_diplomaturas->have_posts()) :
+            <?php if ($query_diplomaturas->have_posts()) : ?>
+                <div class="grid grid-cols-1 gap-px border border-neutral-200 bg-neutral-200 sm:grid-cols-2 lg:grid-cols-3">
+                    <?php
                     while ($query_diplomaturas->have_posts()) : $query_diplomaturas->the_post();
-                        $terminos = get_the_terms(get_the_ID(), 'categoria_formacion');
+                        $terminos         = get_the_terms(get_the_ID(), 'categoria_formacion');
                         $categoria_nombre = ($terminos && !is_wp_error($terminos)) ? $terminos[0]->name : '';
-                ?>
+                    ?>
+                        <article class="group relative flex flex-col bg-white transition-colors duration-300 hover:bg-neutral-50">
 
-                        <article class="group flex flex-col overflow-hidden rounded border border-white/60 bg-white/40 shadow-sm backdrop-blur-md transition-all duration-300  hover:bg-white/60 hover:shadow-md hover:border-blue-200/50">
-
-                            <div class="relative w-full overflow-hidden    aspect-[16/9]">
+                            <div class="relative aspect-[16/9] w-full overflow-hidden border-b border-neutral-200 bg-neutral-100">
                                 <?php if (has_post_thumbnail()) : ?>
-                                    <?php the_post_thumbnail('medium_large', array('class' => 'absolute inset-0 h-full w-full object-cover  transition duration-500  group-hover:opacity-80')); ?>
+                                    <?php the_post_thumbnail('medium_large', array('class' => 'h-full w-full object-cover transition duration-500  ')); ?>
+                                <?php else : ?>
+                                    <div class="flex h-full w-full items-center justify-center text-neutral-300">
+                                        <span class="material-symbols-outlined text-[40px] [font-variation-settings:'wght'_200]">workspace_premium</span>
+                                    </div>
                                 <?php endif; ?>
 
                                 <?php if ($categoria_nombre) : ?>
-                                    <span class="absolute top-3 left-3 rounded-md bg-white/80 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-blue-800 shadow-sm backdrop-blur-sm">
+                                    <span class="absolute top-3 left-3 bg-neutral-950 px-2.5 py-1 text-[10px] font-medium uppercase tracking-wider text-white">
                                         <?php echo esc_html($categoria_nombre); ?>
                                     </span>
                                 <?php endif; ?>
                             </div>
 
-                            <div class="flex flex-1 flex-col p-5">
-                                <h3 class="mb-2 text-lg font-semibold leading-tight text-slate-800 transition group-hover:text-[#2D3863]">
+                            <div class="flex flex-1 flex-col p-6">
+                                <h3 class="text-lg font-medium leading-snug text-ink transition-colors group-hover:text-seu">
                                     <a class="focus:outline-none" href="<?php the_permalink(); ?>">
-                                        <span class="absolute inset-0"></span>
+                                        <span class="absolute inset-0" aria-hidden="true"></span>
                                         <?php the_title(); ?>
                                     </a>
                                 </h3>
 
-                                <div class="line-clamp-2 text-xs text-slate-500">
+                                <div class="mt-2.5 mb-6 line-clamp-2 text-sm leading-relaxed text-neutral-500">
                                     <?php the_excerpt(); ?>
                                 </div>
 
-                                <div class="mt-4 flex items-center text-xs font-semibold text-[#39436F] transition group-hover:text-blue-[#222947]">
-                                    Ver diplomatura
-                                    <svg class="ml-1 h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                        <path d="M5 12h14M13 6l6 6-6 6"></path>
-                                    </svg>
+                                <div class="mt-auto flex items-center justify-between border-t border-neutral-200 pt-4 text-base">
+                                    <span class="font-medium text-ink transition-colors group-hover:text-seu">Ver diplomatura</span>
+                                    <span class="material-symbols-outlined text-[16px] text-neutral-400 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-seu">north_east</span>
                                 </div>
                             </div>
                         </article>
                     <?php
                     endwhile;
                     wp_reset_postdata();
-                else :
                     ?>
-                    <p class="col-span-full text-sm text-slate-500">Próximamente nuevas diplomaturas.</p>
-                <?php endif; ?>
-            </div>
+                </div>
+            <?php else : ?>
+                <div class="border border-neutral-200 bg-neutral-50 p-8 text-sm text-neutral-500">
+                    Próximamente nuevas diplomaturas.
+                </div>
+            <?php endif; ?>
         </div>
 
     </div>

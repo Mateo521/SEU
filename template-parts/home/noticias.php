@@ -28,7 +28,7 @@
                 <?php endif; ?>
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
                 <div class="relative z-10 p-6 text-white sm:p-8">
-                    <span class="inline-block rounded-sm bg-seu px-2 py-1 text-xs font-semibold"><?php echo esc_html(!empty($categorias) ? $categorias[0]->name : __('Noticias', 'seu')); ?></span>
+                    <span class="inline-block rounded-sm bg-seu px-2 py-1 text-base font-semibold"><?php echo esc_html(!empty($categorias) ? $categorias[0]->name : __('Noticias', 'seu')); ?></span>
                     <h3 class="mt-3 max-w-lg font-sans text-2xl font-semibold leading-tight"><a href="<?php the_permalink(); ?>" class="after:absolute after:inset-0 group-hover:underline underline-offset-4"><?php echo esc_html(get_the_title()); ?></a></h3>
                 </div>
             </article>

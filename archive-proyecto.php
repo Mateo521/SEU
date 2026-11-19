@@ -9,7 +9,7 @@ get_header();
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         <header class="mb-12 border-b border-neutral-200 pb-8">
-            <span class="inline-block rounded-sm border border-seu px-3 py-1 text-xs font-semibold uppercase tracking-wider text-seu mb-4">
+            <span class="inline-block rounded-sm border border-seu px-3 py-1 text-base font-semibold uppercase tracking-wider text-seu mb-4">
                 Secretaría de Extensión Universitaria
             </span>
             <h1 class="font-sans text-2xl font-semibold sm:text-3xl text-ink leading-tight mb-6">
@@ -110,7 +110,7 @@ get_header();
                         
                         <div class="flex flex-1 flex-col p-6">
                             <?php if ( $tipo_proyecto ) : ?>
-                                <span class="text-xs font-semibold uppercase tracking-wider text-seu mb-2">
+                                <span class="text-base font-semibold uppercase tracking-wider text-seu mb-2">
                                     <?php echo esc_html( $tipo_proyecto ); ?>
                                 </span>
                             <?php endif; ?>

@@ -34,7 +34,7 @@ query_posts(array_merge($wp_query->query, array('posts_per_page' => 12)));
                     
                     <div class="flex flex-1 flex-col p-6">
                         <?php if ( $categoria_nombre ) : ?>
-                            <span class="text-xs font-semibold uppercase tracking-wider text-seu mb-2">
+                            <span class="text-base font-semibold uppercase tracking-wider text-seu mb-2">
                                 <?php echo esc_html( $categoria_nombre ); ?>
                             </span>
                         <?php endif; ?>

@@ -44,7 +44,7 @@ if ( empty($arancel) || strpos( strtolower($arancel), 'gratuito' ) !== false || 
                 CBU Nº 0720282920000000267722 | Cta. Cte. N° 2677/2<br>
                 Alias: GRINGO.CACTUS.TIMON<br>
                 Banco Santander (Sucursal N° 0282 – San Luis)</p>
-                <p class="text-xs text-neutral-500 mt-2">* Gastos bancarios a cargo del cliente. Recomendado pago como Transferencia.</p>
+                <p class="text-base text-neutral-500 mt-2">* Gastos bancarios a cargo del cliente. Recomendado pago como Transferencia.</p>
             </div>
         <?php else : ?>
             
@@ -113,6 +113,6 @@ if ( empty($arancel) || strpos( strtolower($arancel), 'gratuito' ) !== false || 
         <button type="submit" class="w-full sm:w-auto rounded-sm bg-seu px-8 py-4 font-semibold text-white hover:bg-seu-dark transition">
             Enviar inscripción
         </button>
-        <p class="text-xs text-neutral-500 mt-3">Se enviará una copia de tus respuestas por correo electrónico a la dirección proporcionada.</p>
+        <p class="text-base text-neutral-500 mt-3">Se enviará una copia de tus respuestas por correo electrónico a la dirección proporcionada.</p>
     </div>
 </form>

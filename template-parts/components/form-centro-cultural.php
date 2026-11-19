@@ -34,7 +34,7 @@
         <div class="grid gap-6 sm:grid-cols-3">
             <div class="sm:col-span-3">
                 <label class="lbl">Actividad a desarrollar *</label>
-                <p class="text-xs text-neutral-500 mb-2">Detalle espectáculo, nombre de elenco, características.</p>
+                <p class="text-base text-neutral-500 mb-2">Detalle espectáculo, nombre de elenco, características.</p>
                 <textarea name="actividad_detalle" class="fld" rows="3" required></textarea>
             </div>
             

@@ -63,7 +63,7 @@ function imprimir_tarjeta_evento() {
             <span class="text-sm font-medium uppercase text-neutral-600"><?php echo esc_html($mes); ?></span>
         </time>
         
-        <div class="flex-1 min-w-0">
+        <div class="flex-1 min-w-0 w-full">
             <a href="<?php the_permalink(); ?>" class="group">
                 <h3 class="text-lg font-semibold text-ink leading-tight group-hover:text-seu transition"><?php the_title(); ?></h3>
             </a>
@@ -85,7 +85,7 @@ function imprimir_tarjeta_evento() {
     
         <header class="mb-12 border-b border-neutral-200 pb-8 flex flex-wrap items-end justify-between gap-4">
             <div>
-                <span class="inline-block rounded-sm border border-seu px-3 py-1 text-xs font-semibold uppercase tracking-wider text-seu mb-4">
+                <span class="inline-block rounded-sm border border-seu px-3 py-1 text-base font-semibold uppercase tracking-wider text-seu mb-4">
                     Secretaría de Extensión Universitaria
                 </span>
                 <h1 class="font-sans text-3xl font-semibold sm:text-4xl text-ink leading-tight">

@@ -71,7 +71,7 @@ $query_institucional = new WP_Query(get_agenda_args('institucional', $hoy));
                                 <span class="text-sm font-medium uppercase text-neutral-600"><?php echo esc_html($mes); ?></span>
                             </time>
                             
-                            <div class="flex-1 min-w-0">
+                            <div class="flex-1 min-w-0 w-full">
                                 <h3 class="text-lg font-semibold text-ink leading-tight"><?php the_title(); ?></h3>
                                 <p class="text-sm text-neutral-600 mt-1 truncate">
                                     <?php echo esc_html($lugar); ?> <?php echo $hora ? '· ' . esc_html($hora) : ''; ?>
@@ -110,7 +110,7 @@ $query_institucional = new WP_Query(get_agenda_args('institucional', $hoy));
                                 <span class="text-sm font-medium uppercase text-neutral-600"><?php echo esc_html($mes); ?></span>
                             </time>
                             
-                            <div class="flex-1 min-w-0">
+                            <div class="flex-1 min-w-0 w-full">
                                 <h3 class="text-lg font-semibold text-ink leading-tight"><?php the_title(); ?></h3>
                                 <p class="text-sm text-neutral-600 mt-1 truncate">
                                     <?php echo esc_html($lugar); ?> <?php echo $hora ? '· ' . esc_html($hora) : ''; ?>

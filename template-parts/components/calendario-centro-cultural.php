@@ -103,7 +103,7 @@ $horas_dia = ['08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15
                     <th class="px-4 py-3 font-semibold border-r border-neutral-200 w-24 text-center">Hora</th>
                     <?php foreach ($fechas_mostrar as $fecha) : ?>
                         <th class="px-4 py-3 font-semibold text-center uppercase tracking-wide">
-                            <span class="block text-xs text-neutral-500"><?php echo date_i18n('l', strtotime($fecha)); ?></span>
+                            <span class="block text-base text-neutral-500"><?php echo date_i18n('l', strtotime($fecha)); ?></span>
                             <span class="block text-base"><?php echo date_i18n('j/n', strtotime($fecha)); ?></span>
                         </th>
                     <?php endforeach; ?>
@@ -119,9 +119,9 @@ $horas_dia = ['08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15
                             $is_ocupado = isset($mapa_ocupacion[$fecha][$hora]);
 
                             if ($is_ocupado) {
-                                echo '<td class="px-2 py-3 text-center border-r border-neutral-100 last:border-0"><span class="inline-block rounded-sm bg-red-100 px-3 py-1 text-xs font-bold uppercase tracking-wider text-seu border border-red-200">Ocupado</span></td>';
+                                echo '<td class="px-2 py-3 text-center border-r border-neutral-100 last:border-0"><span class="inline-block rounded-sm bg-red-100 px-3 py-1 text-base font-bold uppercase tracking-wider text-seu border border-red-200">Ocupado</span></td>';
                             } else {
-                                echo '<td class="px-2 py-3 text-center border-r border-neutral-100 last:border-0"><span class="inline-block rounded-sm bg-emerald-50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-emerald-700 border border-emerald-100">Libre</span></td>';
+                                echo '<td class="px-2 py-3 text-center border-r border-neutral-100 last:border-0"><span class="inline-block rounded-sm bg-emerald-50 px-3 py-1 text-base font-semibold uppercase tracking-wider text-emerald-700 border border-emerald-100">Libre</span></td>';
                             }
                         }
                         ?>

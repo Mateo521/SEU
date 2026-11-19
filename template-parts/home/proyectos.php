@@ -4,7 +4,7 @@
  * Componente: proyectos de extensión y convocatorias
  */
 ?>
-<section id="proyectos" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+<section id="proyectos" class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
     <header class="mb-10">
         <h2 class="font-sans text-2xl font-semibold sm:text-3xl">Extensión universitaria</h2>
     </header>

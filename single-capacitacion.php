@@ -24,7 +24,7 @@ get_header();
 
                 <div class="p-8 border-b border-neutral-200">
                     <div>
-                        <span class="inline-block rounded-sm border border-seu px-2 py-0.5 text-xs font-semibold uppercase tracking-wider text-seu mb-4">Capacitación</span>
+                        <span class="inline-block rounded-sm border border-seu px-2 py-0.5 text-base font-semibold uppercase tracking-wider text-seu mb-4">Capacitación</span>
                         <h1 class="font-sans text-2xl font-semibold sm:text-3xl text-ink leading-tight mb-4"><?php the_title(); ?></h1>
 
                         <?php if ($sin_inscripciones) : ?>

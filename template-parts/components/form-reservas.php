@@ -58,7 +58,7 @@
                 <span class="font-semibold capitalize">Noviembre 2026</span>
                 <button type="button" class="font-bold text-neutral-500 hover:text-seu">&gt;</button>
             </div>
-            <div class="grid grid-cols-7 gap-2 text-center text-xs font-medium text-neutral-500">
+            <div class="grid grid-cols-7 gap-2 text-center text-base font-medium text-neutral-500">
                 <span>Lu</span><span>Ma</span><span>Mi</span><span>Ju</span><span>Vi</span><span>Sá</span><span>Do</span>
             </div>
             <div class="mt-2 grid grid-cols-7 gap-2 text-sm">

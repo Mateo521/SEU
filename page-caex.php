@@ -12,7 +12,7 @@ get_header();
 
 
         <header class="mb-16 border-b border-neutral-200 pb-10">
-            <span class="inline-block rounded-sm border border-seu px-3 py-1 text-xs font-semibold uppercase tracking-wider text-seu mb-4">
+            <span class="inline-block rounded-sm border border-seu px-3 py-1 text-base font-semibold uppercase tracking-wider text-seu mb-4">
                 Comisión Asesora de Extensión Universitaria
             </span>
             <h1 class="font-sans text-2xl font-semibold sm:text-5xl text-ink leading-tight mb-6">
@@ -73,7 +73,7 @@ get_header();
                         <h4 class="font-semibold text-ink text-xl">Esp. Oscar Ojeda</h4>
                         <p class="text-neutral-600 mt-1">Secretario de Extensión Universitaria</p>
                     </div>
-                    <span class="inline-block mt-3 sm:mt-0 rounded-sm bg-red-50 text-seu border border-red-100 px-3 py-1 text-xs font-bold uppercase tracking-wider">
+                    <span class="inline-block mt-3 sm:mt-0 rounded-sm bg-red-50 text-seu border border-red-100 px-3 py-1 text-base font-bold uppercase tracking-wider">
                         Coordinador
                     </span>
                 </article>
@@ -83,11 +83,11 @@ get_header();
                     <div class="space-y-4">
                         <div>
                             <h4 class="font-semibold text-ink text-sm">Dra. María Verónica Pérez Chaca</h4>
-                            <p class="text-xs text-neutral-600">Representante</p>
+                            <p class="text-base text-neutral-600">Representante</p>
                         </div>
                         <div>
                             <h4 class="font-semibold text-ink text-sm">Dra. Anna Chiara Mastrodonato</h4>
-                            <p class="text-xs text-neutral-600">Coordinadora de Extensión</p>
+                            <p class="text-base text-neutral-600">Coordinadora de Extensión</p>
                         </div>
                     </div>
                 </article>
@@ -96,7 +96,7 @@ get_header();
                     <span class="text-[10px] font-bold uppercase tracking-widest text-neutral-400 mb-3 block border-b border-neutral-100 pb-2">Facultad de Ciencias Humanas</span>
                     <div>
                         <h4 class="font-semibold text-ink text-sm">Prof. Itatí Liliana Arce</h4>
-                        <p class="text-xs text-neutral-600">Representante</p>
+                        <p class="text-base text-neutral-600">Representante</p>
                     </div>
                 </article>
 
@@ -104,7 +104,7 @@ get_header();
                     <span class="text-[10px] font-bold uppercase tracking-widest text-neutral-400 mb-3 block border-b border-neutral-100 pb-2">Facultad de Cs. Económicas, Jurídicas y Sociales</span>
                     <div>
                         <h4 class="font-semibold text-ink text-sm">Lic. Nazarena Echandía</h4>
-                        <p class="text-xs text-neutral-600">Representante</p>
+                        <p class="text-base text-neutral-600">Representante</p>
                     </div>
                 </article>
 
@@ -113,11 +113,11 @@ get_header();
                     <div class="space-y-4">
                         <div>
                             <h4 class="font-semibold text-ink text-sm">Ing. Guillermo Ariel Martínez</h4>
-                            <p class="text-xs text-neutral-600">Representante</p>
+                            <p class="text-base text-neutral-600">Representante</p>
                         </div>
                         <div>
                             <h4 class="font-semibold text-ink text-sm">Lic. Mariela Soledad Rosa</h4>
-                            <p class="text-xs text-neutral-600">Coordinadora de Extensión, Vinculación y Transferencia</p>
+                            <p class="text-base text-neutral-600">Coordinadora de Extensión, Vinculación y Transferencia</p>
                         </div>
                     </div>
                 </article>
@@ -126,7 +126,7 @@ get_header();
                     <span class="text-[10px] font-bold uppercase tracking-widest text-neutral-400 mb-3 block border-b border-neutral-100 pb-2">Facultad de Cs. Físico Matemáticas y Naturales</span>
                     <div>
                         <h4 class="font-semibold text-ink text-sm">Mgtr. Norma Edith Herrera</h4>
-                        <p class="text-xs text-neutral-600">Representante</p>
+                        <p class="text-base text-neutral-600">Representante</p>
                     </div>
                 </article>
 
@@ -135,11 +135,11 @@ get_header();
                     <div class="space-y-4">
                         <div>
                             <h4 class="font-semibold text-ink text-sm">Dra. María Luján Correa</h4>
-                            <p class="text-xs text-neutral-600">Representante</p>
+                            <p class="text-base text-neutral-600">Representante</p>
                         </div>
                         <div>
                             <h4 class="font-semibold text-ink text-sm">Lic. Johanna Vintar</h4>
-                            <p class="text-xs text-neutral-600">Coordinadora de Extensión</p>
+                            <p class="text-base text-neutral-600">Coordinadora de Extensión</p>
                         </div>
                     </div>
                 </article>
@@ -148,7 +148,7 @@ get_header();
                     <span class="text-[10px] font-bold uppercase tracking-widest text-neutral-400 mb-3 block border-b border-neutral-100 pb-2">Facultad de Psicología</span>
                     <div>
                         <h4 class="font-semibold text-ink text-sm">Lic. Dana Barimboim</h4>
-                        <p class="text-xs text-neutral-600">Representante</p>
+                        <p class="text-base text-neutral-600">Representante</p>
                     </div>
                 </article>
 
@@ -156,7 +156,7 @@ get_header();
                     <span class="text-[10px] font-bold uppercase tracking-widest text-neutral-400 mb-3 block border-b border-neutral-100 pb-2">Facultad de Turismo y Urbanismo</span>
                     <div>
                         <h4 class="font-semibold text-ink text-sm">Lic. Mónica Torrez</h4>
-                        <p class="text-xs text-neutral-600">Representante</p>
+                        <p class="text-base text-neutral-600">Representante</p>
                     </div>
                 </article>
 

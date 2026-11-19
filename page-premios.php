@@ -13,7 +13,7 @@ get_header();
 
 
         <header class="mb-16 border-b border-neutral-200 pb-10 text-center">
-            <span class="inline-block rounded-sm border border-seu px-3 py-1 text-xs font-semibold uppercase tracking-wider text-seu mb-4">
+            <span class="inline-block rounded-sm border border-seu px-3 py-1 text-base font-semibold uppercase tracking-wider text-seu mb-4">
                 Secretaría de Extensión Universitaria
             </span>
             <h1 class="font-sans text-4xl font-semibold sm:text-5xl text-ink leading-tight mb-4">

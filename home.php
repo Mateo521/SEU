@@ -12,7 +12,7 @@ query_posts(array_merge($wp_query->query, array('posts_per_page' => 12)));
 <main id="contenido" class="py-20 bg-paper">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <header class="mb-12 border-b border-neutral-200 pb-6">
-            <span class="inline-block rounded-sm border border-seu px-3 py-1 text-xs font-semibold uppercase tracking-wider text-seu mb-4">
+            <span class="inline-block rounded-sm border border-seu px-3 py-1 text-base font-semibold uppercase tracking-wider text-seu mb-4">
                 Secretaría de Extensión Universitaria
             </span>
             <h1 class="font-sans text-2xl font-semibold sm:text-3xl text-ink leading-tight mb-4">
@@ -39,7 +39,7 @@ query_posts(array_merge($wp_query->query, array('posts_per_page' => 12)));
                         <?php endif; ?>
 
                         <div class="flex flex-1 flex-col p-6">
-                            <div class="flex items-center justify-between text-xs text-neutral-500 mb-2">
+                            <div class="flex items-center justify-between text-base text-neutral-500 mb-2">
                                 <?php if ($cat_nombre) : ?>
                                     <span class="font-semibold uppercase tracking-wider text-seu">
                                         <?php echo esc_html($cat_nombre); ?>
