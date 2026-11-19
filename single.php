@@ -79,7 +79,7 @@ get_header();
                         <div class="lg:sticky lg:top-28">
 
                             <?php if (has_post_thumbnail()) : ?>
-                                <div class="aspect-[4/3] w-full overflow-hidden border-b border-neutral-200 bg-neutral-100">
+                                <div class=" w-full h-auto overflow-hidden border-b border-neutral-200 bg-neutral-100">
                                     <?php the_post_thumbnail('large', array('class' => 'h-full w-full object-cover')); ?>
                                 </div>
                             <?php endif; ?>

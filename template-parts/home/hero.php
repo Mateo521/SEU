@@ -58,7 +58,7 @@ if ($query_destacado->have_posts()) {
 
     <div class="relative flex min-h-screen flex-col justify-between bg-neutral-950">
 
-        <div class="relative flex flex-1 flex-col justify-between px-6 py-8 sm:px-10 lg:px-14 lg:py-10 min-h-[70vh]">
+        <div class="relative flex flex-1 flex-col  justify-end px-6 py-8 sm:px-10 lg:px-14 lg:py-10 min-h-[70vh]">
 
 
             <video
@@ -80,16 +80,27 @@ if ($query_destacado->have_posts()) {
             <div class="absolute inset-0 z-10 bg-gradient-to-t from-black/60 via-transparent to-black/30" aria-hidden="true"></div>
 
 
-            <div class="relative z-20 my-auto flex flex-col justify-end gap-10 py-14 lg:flex-row lg:items-end lg:py-16">
+            <div class="relative max-w-7xl mx-auto w-full z-20 my-2 flex flex-col justify-between gap-10 lg:flex-row lg:items-end py-3">
 
-                <!--div class="max-w-3xl">
-                    <h1 class="font-sans text-4xl font-light  tracking-tight text-white sm:text-5xl lg:text-2xl xl:text-5xl">
-                        Consolidar la relación entre la Universidad y la Sociedad
-                    </h1>
-                    <p class="mt-6 max-w-xl text-lg font-light leading-relaxed text-neutral-200 sm:text-xl">
-                        Formación, cultura, territorio y transferencia de conocimientos desde la UNSL.
-                    </p>
-                </div-->
+                <form role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>" class="group w-full max-w-md">
+                    <label for="hero-busqueda" class="mb-3 block text-xs font-semibold uppercase tracking-[0.22em] text-white/75">
+                        Buscador
+                    </label>
+                    <div class="flex items-center rounded border border-white/25 bg-black/35 p-1.5 shadow-2xl backdrop-blur-md transition focus-within:border-white/70 focus-within:bg-black/55">
+                        <span class="material-symbols-outlined ml-3 text-[22px] text-white/75" aria-hidden="true">search</span>
+                        <input
+                            id="hero-busqueda"
+                            type="search"
+                            name="s"
+                            value="<?php echo esc_attr(get_search_query()); ?>"
+                            placeholder="¿Qué estás buscando?"
+                            autocomplete="off"
+                            class="min-w-0 flex-1 bg-transparent px-3 py-2.5 text-base text-white outline-none placeholder:text-white/60">
+                        <button type="submit" class="flex size-11 shrink-0 items-center justify-center rounded bg-white text-neutral-950 transition hover:bg-seu hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black" aria-label="Buscar">
+                            <span class="material-symbols-outlined text-[21px]" aria-hidden="true">arrow_forward</span>
+                        </button>
+                    </div>
+                </form>
 
                 <div class="flex flex-col items-start gap-8 lg:items-end lg:text-right">
                     <nav aria-label="Accesos rápidos" class="flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium text-neutral-200 lg:flex-col lg:gap-y-2.5">
@@ -101,7 +112,7 @@ if ($query_destacado->have_posts()) {
 
                     <a href="#noticias" class="group inline-flex items-center gap-3 text-sm font-medium text-white transition hover:text-seu">
                         <span>Explorá novedades</span>
-                        <span class="flex size-9 items-center justify-center rounded-full bg-white text-neutral-950 transition group-hover:bg-seu group-hover:text-white">
+                        <span class="flex size-9 items-center justify-center rounded bg-white text-neutral-950 transition group-hover:bg-seu group-hover:text-white">
                             <span class="material-symbols-outlined text-[18px]">south_east</span>
                         </span>
                     </a>
@@ -140,8 +151,8 @@ if ($query_destacado->have_posts()) {
                         alt="Actividades SEU"
                         class="h-full w-full object-cover transition-transform duration-500 group-">
                 <?php endif; ?>
-                <div class="absolute inset-0 flex items-center justify-center bg-black/25 transition group-hover:bg-black/40">
-                    <span class="flex size-12 items-center justify-center rounded-full border border-white/70 bg-black/40 text-white backdrop-blur-sm transition group-hover:scale-110">
+                <div class="absolute inset-0 flex items-end justify-end p-3 bg-black/25 transition group-hover:bg-black/40">
+                    <span class="flex size-12 items-center justify-center rounded border border-white/70 bg-black/40 text-white backdrop-blur-sm transition group-hover:scale-110">
                         <span class="material-symbols-outlined text-[24px]">arrow_outward</span>
                     </span>
                 </div>
@@ -170,90 +181,6 @@ if ($query_destacado->have_posts()) {
         </div>
     </div>
 
-
-    <!--div id="noticias" class="mx-auto max-w-7xl space-y-16 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-        <?php if ($query_noticias->have_posts()) : ?>
-            <div>
-                <div class="mb-6 flex items-center justify-between">
-                    <h2 class="font-sans text-2xl font-semibold text-white tracking-tight">Noticias Institucionales</h2>
-                    <a href="<?php echo home_url('/noticias'); ?>" class="text-sm font-medium text-neutral-300 hover:text-white transition">Ver todas &rarr;</a>
-                </div>
-
-                <div class="swiper swiper-seccion relative px-2">
-                    <div class="swiper-wrapper pb-4">
-                        <?php while ($query_noticias->have_posts()) : $query_noticias->the_post(); ?>
-                            <div class="swiper-slide !w-[85vw] sm:!w-[22rem] h-auto">
-                                <a href="<?php the_permalink(); ?>" class="group flex h-full flex-col rounded bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 hover:border-white/30 transition-all duration-300 overflow-hidden">
-                                    <div class="relative h-48 w-full overflow-hidden bg-neutral-800 shrink-0">
-                                        <?php if (has_post_thumbnail()) : ?>
-                                            <?php the_post_thumbnail('medium_large', array('class' => 'w-full h-full object-cover transition-transform duration-500')); ?>
-                                        <?php endif; ?>
-                                    </div>
-                                    <div class="flex flex-1 flex-col p-5">
-                                        <h3 class="font-sans text-lg font-semibold leading-snug text-white group-hover:text-seu transition-colors line-clamp-2">
-                                            <?php the_title(); ?>
-                                        </h3>
-                                        <div class="mt-2 text-sm text-neutral-300 line-clamp-2">
-                                            <?php echo wp_trim_words(get_the_excerpt(), 15); ?>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        <?php endwhile;
-                        wp_reset_postdata(); ?>
-                    </div>
-
-                    <div class="swiper-button-prev !text-white !left-0 after:!text-2xl drop-shadow-md"></div>
-                    <div class="swiper-button-next !text-white !right-0 after:!text-2xl drop-shadow-md"></div>
-                </div>
-            </div>
-        <?php endif; ?>
-
-        <?php if ($query_formacion->have_posts()) : ?>
-            <div>
-                <div class="mb-6 flex items-center justify-between">
-                    <h2 class="font-sans text-2xl font-semibold text-white tracking-tight">Formación</h2>
-                    <a href="<?php echo home_url('/capacitaciones'); ?>" class="text-sm font-medium text-neutral-300 hover:text-white transition">Ver todas &rarr;</a>
-                </div>
-
-                <div class="swiper swiper-seccion relative px-2">
-                    <div class="swiper-wrapper pb-4">
-                        <?php while ($query_formacion->have_posts()) : $query_formacion->the_post();
-                            $tipo = get_post_type();
-                            $badge = ($tipo === 'diplomatura') ? 'Diplomatura' : 'Capacitación';
-                        ?>
-                            <div class="swiper-slide !w-[85vw] sm:!w-[22rem] h-auto">
-                                <a href="<?php the_permalink(); ?>" class="group flex h-full flex-col rounded bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 hover:border-white/30 transition-all duration-300 overflow-hidden">
-                                    <div class="relative h-48 w-full overflow-hidden bg-neutral-800 shrink-0">
-                                        <?php if (has_post_thumbnail()) : ?>
-                                            <?php the_post_thumbnail('medium_large', array('class' => 'w-full h-full object-cover transition-transform duration-500')); ?>
-                                        <?php endif; ?>
-                                        <div class="absolute top-3 left-3">
-                                            <span class="rounded-sm bg-seu/90 px-2 py-1 text-base font-bold uppercase tracking-wider text-white backdrop-blur-md shadow-sm">
-                                                <?php echo $badge; ?>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-1 flex-col p-5">
-                                        <h3 class="font-sans text-lg font-semibold leading-snug text-white group-hover:text-seu transition-colors line-clamp-2">
-                                            <?php the_title(); ?>
-                                        </h3>
-                                        <div class="mt-4 flex items-center text-sm font-medium text-neutral-400 group-hover:text-white transition-colors">
-                                            Inscripciones abiertas
-                                            <span class="material-symbols-outlined ml-1 text-[16px]">chevron_right</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        <?php endwhile;
-                        wp_reset_postdata(); ?>
-                    </div>
-                    <div class="swiper-button-prev !text-white !left-0 after:!text-2xl drop-shadow-md"></div>
-                    <div class="swiper-button-next !text-white !right-0 after:!text-2xl drop-shadow-md"></div>
-                </div>
-            </div>
-        <?php endif; ?>
-    </div-->
 
 
 
